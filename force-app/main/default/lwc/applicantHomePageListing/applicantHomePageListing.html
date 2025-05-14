@@ -1,0 +1,95 @@
+<template>
+    <div class="housing-search-container">
+        <div class="slds-grid slds-gutters slds-wrap slds-p-bottom_medium">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12">
+               <span style="font-size: 24pt; font-family: verdana; color: #4e3476;">Listings for You&nbsp;&nbsp;</span>
+               <span style="font-size: 10pt; color: #34495e;">Based on your Housing Profile</span>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12 slds-p-top_small slds-text-align_right">
+             <!-- <span class="advanced-search" onclick={navigateToAdvancedSearch}>Advanced Search</span>  -->
+               <!-- <lightning-button 
+               variant="brand" 
+               label="View All Listings & Advanced Search" 
+               onclick={navigateToAdvancedSearch} 
+               class="advanced-search-button">
+           </lightning-button>  -->
+
+            <lightning-button
+            label="View All Listings & Advanced Search"
+            icon-name="utility:search"
+            icon-position="left"
+            variant="brand"
+            size="medium"
+            class="slds-p-around_large"
+            onclick={navigateToAdvancedSearch}>
+            </lightning-button>
+            </div>
+        </div>        
+
+        <!-- Property results - NO CONDITIONAL RENDERING for the sample cards -->
+        <div class="property-results">
+            <template if:true={showListings}>
+            <div class="results-grid">
+                <template for:each={listings} for:item="listing">
+                    <div class="property-card" key={listing.Id} onclick={handleListingClick} data-id={listing.Id}>
+                        <div class="property-card-content">
+                            <div class="property-image-container">
+                                <template if:true={listing.HasImage}>
+                                    <img src={listing.Image} alt="Propert Image" class="property-image"/>    
+                                </template>
+                                <template if:false={listing.HasImage}>
+                                    <img src={demoImage} alt="Propert Image" class="property-image"/>
+                                </template>
+                                <template if:true={listing.IsMitchellLama}>
+                                    <div class="mitchell-lama-badge">
+                                        Mitchell-Lama Property
+                                    </div>
+                                </template>            
+                            </div>
+                            <div class="property-details">
+                                <div class="property-header">
+                                    <div class="property-type">{listing.Type}</div>
+                                    <!-- <template if:true={propertyType}>
+                                        
+                                    </template> -->
+                                    <template if:true={listing.isAccessibleUnit}>
+                                        <div class="property-name">{accessibleUnits} - {listing.ProjectName}</div>    
+                                    </template>
+                                    <template if:false={listing.isAccessibleUnit}>
+                                    <div class="property-name">{listing.ProjectName}</div>
+                                </template>
+                                    <!-- <div class="property-name">{listing.ProjectName}</div> -->
+                                </div>
+                                <div class="property-info">
+                                    <div class="info-row">
+                                        <div class="info-label">INCOME RANGE:</div>
+                                        <div class="info-value">{listing.MinimumIncome}&nbsp;-&nbsp;{listing.MaximumIncome}</div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="info-label">LOCATION:</div>
+                                        <div class="info-value">{listing.County}</div>
+                                    </div>
+                                    <template if:true={listing.showApplicationDueDate}>
+                                        <div class="info-row">
+                                            <div class="info-label">APPLICATION DEADLINE DATE:</div>
+                                            <div class="info-value">{listing.ApplicationEndDate}</div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+        <template if:false={showListings}>
+            <div class="no-listings-message">
+            <p>No listings currently match your housing profile criteria. While we don't have direct matches at the moment, you can check back often or use the Advanced Search option to browse all available properties.</p>
+        </div>
+        </template>
+        </div>
+    </div>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+    </template>
+</template>

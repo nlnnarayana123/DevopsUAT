@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Owner_to_Service_User__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is used to update the Owner Id field from created user to HCR Service Account User. Once this flag is marked as true, a flow is triggered to update the owner.</description>
+    <label>Update Owner to Service User</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

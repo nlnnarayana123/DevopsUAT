@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Percentage_4_9</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>HCR_Individual_Application_Compact_Layout</compactLayoutAssignment>
+    <label>4% 9%</label>
+    <picklistValues>
+        <picklist>Appeal_Rejection_Reason__c</picklist>
+        <values>
+            <fullName>Failed Credit Background Individualized Assessment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failed Criminal Legal System Individualized Assessment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure to Respond to Eligibility Appointment Letter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure to Submit Documentation by Deadline date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inconsistent%2FUnverifiable Household</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Units Available for Household Size</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Over Income</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self-Termination</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under Income</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Appeal_Status__c</picklist>
+        <values>
+            <fullName>Appeal Denied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Appeal Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Appeal Successful</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Relationship_ShareHolder__c</picklist>
+        <values>
+            <fullName>Case Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Housing Counselor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Unit_Status__c</picklist>
+        <values>
+            <fullName>Accepted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ApplicationCategory</picklist>
+        <values>
+            <fullName>Basic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Special</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ApplicationType</picklist>
+        <values>
+            <fullName>4%25 9%25</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Application_Submitted_As__c</picklist>
+        <values>
+            <fullName>Online Application</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paper Based Application</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applied_On__c</picklist>
+        <values>
+            <fullName>Lottery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waitlist</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Category</picklist>
+        <values>
+            <fullName>Benefit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HCR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>License</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lottery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Permit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contact_Person_Relationships__c</picklist>
+        <values>
+            <fullName>Case Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Housing Counselor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DHCR_Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved by DHCR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected by DHCR</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ethnicity__c</picklist>
+        <values>
+            <fullName>Choose not to answer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hispanic or Latino</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Hispanic or Latino</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>First_Preferred_Unit_Type__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gender_Identity__c</picklist>
+        <values>
+            <fullName>Bisexual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Choose not to answer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lesbian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nonbinary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Listed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Straight</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transgender</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lease_Term__c</picklist>
+        <values>
+            <fullName>12 months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24 months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 months</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Move_Request_Status__c</picklist>
+        <values>
+            <fullName>Accepted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Status__c</picklist>
+        <values>
+            <fullName>Not Paid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Preferred_Method_of_Contact__c</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paper Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Text Message</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Race__c</picklist>
+        <values>
+            <fullName>American-Indian or Native Alaskan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black or African American</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Choose not to answer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Native Hawaiian or Other Pacific Islander</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reject_Reason__c</picklist>
+        <values>
+            <fullName>Failure to Respond to Eligibility Appointment Letter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure to Submit Documentation by Deadline Date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inconsistent%2FUnverifiable Household</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Units Available for Household Size</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Over Income</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self-Termination</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under Income</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rental_Subsidy__c</picklist>
+        <values>
+            <fullName>Other Rental Subsidy%2FCertificate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 8 Voucher</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Second_Preferred_Unit_Type__c</picklist>
+        <values>
+            <fullName>0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Shareholder_Record_Status__c</picklist>
+        <values>
+            <fullName>Deceased</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vacated</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Appeal Filed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Documents Submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive - Application Withdrawn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ineligible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Move Request Submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moved In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready to be offered unit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Selected For Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Unit Accepted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit Offered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_Status__c</picklist>
+        <values>
+            <fullName>Additional Documents Requested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Appeal Filed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Applicant Declined Unit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Applicant Placed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Applicant Withdrawal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Documents Requested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate application</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First Unit Rejected by Applicant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moved In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No units available for household size</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>O%2FMA Rejection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Over Income</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready to be offered unit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Second Unit Rejected by Applicant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under Income</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit Accepted by Applicant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit Rejected by Applicant</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Succession_Status__c</picklist>
+        <values>
+            <fullName>Succession Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Succession Denied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Succession Disapproved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Succession Eligible</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>UnitType_1__c</picklist>
+        <values>
+            <fullName>0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>UnitType_2__c</picklist>
+        <values>
+            <fullName>0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

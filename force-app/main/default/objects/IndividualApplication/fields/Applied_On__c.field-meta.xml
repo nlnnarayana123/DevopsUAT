@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applied_On__c</fullName>
+    <label>Applied On</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Waitlist</fullName>
+                <default>false</default>
+                <label>Waitlist</label>
+            </value>
+            <value>
+                <fullName>Lottery</fullName>
+                <default>false</default>
+                <label>Lottery</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

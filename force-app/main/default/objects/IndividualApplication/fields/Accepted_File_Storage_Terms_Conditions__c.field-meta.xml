@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accepted_File_Storage_Terms_Conditions__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field captures if the applicant has accepted the terms and conditions set forth by HCR about the file storage and usage. This field will be only shown once to the applicant</description>
+    <label>Accepted File Storage Terms &amp; Conditions</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

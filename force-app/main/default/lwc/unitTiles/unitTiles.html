@@ -1,0 +1,129 @@
+<template>
+    <div class="unit-tiles-container">
+        <template for:each={units} for:item="unit">
+            <div key={unit.id} class={unit.cssClass} data-id={unit.id} onclick={handleTileClick}>
+                <template if:true={unit.isSetAside}>
+                    <div class="header-section">
+                        <div class="unit-info">
+                            <div class="unit-column">
+                                <div class="info-label">Set-Aside</div>
+                                <div class="unit-type">{unit.setAside}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </template>
+                <template if:true={unit.isPreference}>
+                    <div class="header-section">
+                        <div class="unit-info">
+                            <div class="unit-column">
+                                <div class="info-label">Preference</div>
+                                <div class="unit-type">{unit.preferenceType}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </template>
+                <template if:true={unit.isRule}>
+                    <div class="header-section">
+                        <div class="unit-info">
+                            <div class="unit-column">
+                                <div class="info-label">Unit Type</div>
+                                <div class="unit-type">{unit.unitType}</div>
+                            </div>
+                            <div class="unit-column">
+                                <div class="info-label">AMI</div>
+                                <div class="ami-percentage">{unit.ami}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-section">
+                        <div class="info-row">
+                            <div class="info-label">Income Range</div>
+                            <div class="info-value">{unit.incomeRange}</div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="info-row horizontal-info">
+                            <div class="info-block">
+                                <div class="info-label">HH Size</div>
+                                <div class="info-value">{unit.occupants}</div>
+                            </div>
+                            <div class="info-block">
+                                <div class="info-label">Accessibility</div>
+                                <div class="accessibility-value"><strong>{unit.accessibility}</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+        </template>
+    </div>
+</template>
+
+
+<!-- 
+<template>
+    <div class="slds-grid slds-wrap slds-gutters_small">
+      <template for:each={units} for:item="unit">
+        <div
+          key={unit.id}
+          class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3"
+        >
+          <div class={unit.cssClass} data-id={unit.id} onclick={handleTileClick}>
+            
+            <div class="header-section slds-grid slds-grid_align-spread slds-p-horizontal_small slds-p-vertical_small">
+              
+              <template if:true={unit.isSetAside}>
+                <div class="slds-col">
+                  <div class="info-label">Set‑Aside</div>
+                  <div class="unit-type">{unit.setAside}</div>
+                </div>
+              </template>
+              
+              <template if:true={unit.isPreference}>
+                <div class="slds-col">
+                  <div class="info-label">Preference</div>
+                  <div class="unit-type">{unit.preferenceType}</div>
+                </div>
+              </template>
+              
+              <template if:true={unit.isRule}>
+                <div class="slds-col">
+                  <div class="info-label">Unit Type</div>
+                  <div class="unit-type">{unit.unitType}</div>
+                </div>
+                <div class="slds-col">
+                  <div class="info-label">AMI</div>
+                  <div class="ami-percentage">{unit.ami}</div>
+                </div>
+              </template>
+              
+            </div>
+    
+            <template if:true={unit.isRule}>
+              <div class="content-section slds-p-horizontal_small slds-p-bottom_small">
+                <div class="info-row">
+                  <div class="info-label">Income Range</div>
+                  <div class="info-value">{unit.incomeRange}</div>
+                </div>
+                <div class="divider"></div>
+                <div class="slds-grid slds-grid_align-spread">
+                  <div class="slds-col info-block">
+                    <div class="info-label">HH Size</div>
+                    <div class="info-value">{unit.occupants}</div>
+                  </div>
+                  <div class="slds-col info-block">
+                    <div class="info-label">Accessibility</div>
+                    <div class="accessibility-value"><strong>{unit.accessibility}</strong></div>
+                  </div>
+                </div>
+              </div>
+            </template>
+    
+          </div>
+        </div>
+      </template>
+    </div>
+  </template>
+   -->

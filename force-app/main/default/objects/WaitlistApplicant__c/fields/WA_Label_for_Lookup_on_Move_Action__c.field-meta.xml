@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WA_Label_for_Lookup_on_Move_Action__c</fullName>
+    <externalId>false</externalId>
+    <formula>Waitlist__r.Name &amp; &quot; | &quot; &amp; Waitlist__r.Project__r.Name &amp; &quot; | &quot; &amp; TEXT(Waitlist__r.Unit_Type__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>WA Label for Lookup on Move Action</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Succession_Status__c</fullName>
+    <description>Succession Status shows where the application succession status is at</description>
+    <inlineHelpText>Succession Status shows where the application succession status is at</inlineHelpText>
+    <label>Succession Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Succession Eligible</fullName>
+                <default>false</default>
+                <label>Succession Eligible</label>
+            </value>
+            <value>
+                <fullName>Succession Disapproved</fullName>
+                <default>false</default>
+                <label>Succession Disapproved</label>
+            </value>
+            <value>
+                <fullName>Succession Approved</fullName>
+                <default>false</default>
+                <label>Succession Approved</label>
+            </value>
+            <value>
+                <fullName>Succession Denied</fullName>
+                <default>false</default>
+                <label>Succession Denied</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Succession Submitted</controllingFieldValue>
+            <valueName>Succession Eligible</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Succession Submitted</controllingFieldValue>
+            <valueName>Succession Disapproved</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Succession Submitted</controllingFieldValue>
+            <valueName>Succession Approved</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Succession Submitted</controllingFieldValue>
+            <valueName>Succession Denied</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

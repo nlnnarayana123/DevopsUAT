@@ -1,0 +1,95 @@
+/* Styles for small combobox on right side */
+.small-combobox {
+    width: 150px;
+    font-family: verdana;
+    font-weight: 400 !important;
+}
+
+/* Style the combobox to match the design */
+.small-combobox lightning-combobox {
+    --sds-c-input-radius-border: 4px;
+}
+
+/* Set the dropdown text style */
+.small-combobox .slds-combobox__input {
+    font-family: verdana;
+    font-weight: 400 !important;
+    color: #3e3e3c;
+    font-size: 0.875rem;
+}
+
+/* Style for dropdown items */
+.slds-listbox__item {
+    font-family: verdana;
+    font-weight: 400 !important;
+}
+
+/* Match the dropdown border color to your theme */
+.slds-combobox_container {
+    border-color: #dddbda;
+}
+
+/* Add a subtle hover effect */
+.small-combobox lightning-combobox:hover {
+    --sds-c-input-color-border-focus: #602C7E;
+}
+
+
+/* Styling for filter label and combobox */
+.filter-label {
+    font-family: verdana;
+    font-weight: 400 !important;
+    font-size: 0.875rem;
+    color: #3e3e3c;
+    white-space: nowrap;
+}
+
+.small-combobox {
+    width: 120px;  /* Reduced width to account for label */
+    font-family: verdana;
+    font-weight: 400 !important;
+}
+
+/* Style the combobox to match the design */
+.small-combobox lightning-combobox {
+    --sds-c-input-radius-border: 4px;
+}
+
+/* Set the dropdown text style */
+.small-combobox .slds-combobox__input {
+    font-family: verdana;
+    font-weight: 400 !important;
+    color: #3e3e3c;
+    font-size: 0.875rem;
+}
+
+/* Style for dropdown items */
+.slds-listbox__item {
+    font-family: verdana;
+    font-weight: 400 !important;
+}
+
+/* Match the dropdown border color to your theme */
+.slds-combobox_container {
+    border-color: #dddbda;
+}
+
+/* Add a subtle hover effect */
+.small-combobox lightning-combobox:hover {
+    --sds-c-input-color-border-focus: #602C7E;
+}
+
+
+.checkbox-container {
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 1rem;
+    /* justify-content: flex-start;
+    padding: 0 !important;
+    margin: 0 !important; */
+}
+
+.checkbox-item {
+    /* flex: 0 1 auto; */
+    min-width: 150px; /* Adjust as needed */
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DHCR_Approval_Status__c</fullName>
+    <description>This is the DHCR Approval Status</description>
+    <inlineHelpText>This is the DHCR Approval Status</inlineHelpText>
+    <label>DHCR Approval Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Approved by DHCR</fullName>
+                <default>false</default>
+                <label>Approved by DHCR</label>
+            </value>
+            <value>
+                <fullName>Rejected by DHCR</fullName>
+                <default>false</default>
+                <label>Rejected by DHCR</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Offer Accepted</controllingFieldValue>
+            <controllingFieldValue>Unit Accepted</controllingFieldValue>
+            <controllingFieldValue>Submitted to DHCR for Approval</controllingFieldValue>
+            <valueName>Approved by DHCR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Offer Accepted</controllingFieldValue>
+            <controllingFieldValue>Unit Accepted</controllingFieldValue>
+            <controllingFieldValue>Submitted to DHCR for Approval</controllingFieldValue>
+            <valueName>Rejected by DHCR</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

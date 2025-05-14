@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WaitlistLottery</fullName>
+    <fields>RecordTypeId</fields>
+    <fields>Account__c</fields>
+    <fields>Project_Name__c</fields>
+    <fields>Name</fields>
+    <fields>Type__c</fields>
+    <fields>Is_Mitchell_Lama__c</fields>
+    <fields>Status__c</fields>
+    <fields>OwnerId</fields>
+    <fields>Application_Due__c</fields>
+    <label>WaitlistLottery</label>
+</CompactLayout>

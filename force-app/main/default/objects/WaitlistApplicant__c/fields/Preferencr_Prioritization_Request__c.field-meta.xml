@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preferencr_Prioritization_Request__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( INCLUDES(Prioritization_Reason__c, &quot;Medical reasons&quot;) || INCLUDES(Prioritization_Reason__c, &quot;Apartment Uninhabitable Circumstances&quot;) || INCLUDES(Prioritization_Reason__c, &quot;Plumbing issues&quot;) ||INCLUDES(Prioritization_Reason__c, &quot;Other&quot;), &quot;Emergency&quot;, 
+IF( INCLUDES(Prioritization_Reason__c, &quot;Veteran&quot;) || INCLUDES(Prioritization_Reason__c, &quot;Senior&quot;) || INCLUDES(Prioritization_Reason__c, &quot;Student&quot;) || INCLUDES(Prioritization_Reason__c, &quot;Set Aside Accesibility&quot;), &quot;Preference&quot;, &quot;Null&quot; ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Preferencr Prioritization Request formul</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

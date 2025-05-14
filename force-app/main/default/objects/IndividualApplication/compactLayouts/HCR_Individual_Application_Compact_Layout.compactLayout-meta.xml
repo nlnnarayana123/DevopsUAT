@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HCR_Individual_Application_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>AppliedDate</fields>
+    <fields>AccountId</fields>
+    <fields>ApplicationType</fields>
+    <fields>Waitlist__c</fields>
+    <fields>Waitlist_Applicant_Number__c</fields>
+    <fields>Status</fields>
+    <fields>Portal_Status__c</fields>
+    <label>HCR Individual Application Compact Layout</label>
+</CompactLayout>

@@ -1,0 +1,381 @@
+<!-- eligibilityRuleSinglestep.html -->
+<template>
+    <div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-size_1-of-1">
+            <div class="slds-form-element">
+                <fieldset class="slds-form-element">
+                    <legend class="slds-form-element__legend slds-form-element__label">Type of Eligibility Rule</legend>
+                    <div class="slds-form-element__control">
+                        <div class="slds-radio">
+                            <input type="radio" id="standard-rule" name="rule-type" value="Standard Eligibility Rule" checked={isStandardRule} onchange={handleRuleTypeChange} disabled={disableRuleSelection}/>
+                            <label class="slds-radio__label" for="standard-rule">
+                                <span class="slds-radio_faux"></span>
+                                <span class="slds-form-element__label">Standard Eligibility Rule</span>
+                            </label>
+                        </div>
+                        <div class="slds-radio">
+                            <input type="radio" id="set-aside" name="rule-type" value="This is for Set Aside" checked={isSetAside} onchange={handleRuleTypeChange} disabled={disableRuleSelection} />
+                            <label class="slds-radio__label" for="set-aside">
+                                <span class="slds-radio_faux"></span>
+                                <span class="slds-form-element__label">This is for Set-Aside</span>
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        
+        <!-- Set-Aside Type field - Only visible when This is for Set-Aside is selected -->
+        <div class="slds-col slds-size_1-of-1 slds-p-top_medium" if:true={isSetAside}>
+            <div class="slds-form-element" if:true={eligibilityRule}>
+                <label class="slds-form-element__label" for="set-aside-type">
+                    <abbr class="slds-required" title="required">*</abbr>
+                    Set-Aside
+                </label>
+                <h1>{eligibilityRule.setAsideType}</h1>
+                        <lightning-combobox
+                    name="accessibility-unit"
+                    value={eligibilityRule.setAsideType}
+                    placeholder="-- Choose an option --"
+                    options={SetAsideOptions}
+                    onchange={handleSetAsideTypeChange}
+                    disabled={disableRuleSelection}>
+                </lightning-combobox>
+                <div if:true={errors.setAsideType} class="slds-form-element__help slds-text-color_error">
+                    {errors.setAsideType}
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Standard eligibility fields - Only visible when Standard Eligibility Rule is selected -->
+        <template if:true={isStandardRule}>
+        <template if:true={showAccessbilityOptions}>
+
+            <div class="slds-col slds-size_1-of-2 slds-p-top_medium">
+                <label class="slds-form-element__label" for="number-of-bedrooms">
+                   Accessibility Unit
+                </label>
+                <lightning-combobox
+                    name="accessibility-unit"
+                    value={eligibilityRule.accessibilityUnit}
+                    placeholder="-- Choose an option --"
+                    options={accessibilityOptions}
+                    onchange={handleAccessibilityChange}
+                    disabled={disableRuleSelection}>
+                </lightning-combobox>
+                <!-- <div if:true={errors.accessibilityUnit} class="slds-form-element__help slds-text-color_error">
+                    {errors.accessibilityUnit}
+                </div> -->
+            </div>
+
+        </template>
+
+            <div class="slds-col slds-size_1-of-2 slds-p-top_medium">
+                <label class="slds-form-element__label" for="number-of-bedrooms">
+                    <abbr class="slds-required" title="required">*</abbr> AMI Category
+                </label>
+                <lightning-combobox
+                    name="ami-categoryt"
+                    value={eligibilityRule.amiCategory}
+                    placeholder="-- Choose an option --"
+                    options={AMICategory}
+                    onchange={handleAmiCategoryChange}
+                    disabled={disableRuleSelection}>
+                </lightning-combobox>
+                <div if:true={errors.amiCategory} class="slds-form-element__help slds-text-color_error">
+                    {errors.amiCategory}
+                </div>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2 slds-p-top_medium">
+                <div class="slds-form-element">
+                <label class="slds-form-element__label" for="number-of-bedrooms">
+                    <abbr class="slds-required" title="required">*</abbr> Number of Bedrooms
+                </label>
+                <div class="slds-form-element__control">
+                <lightning-combobox
+                    name="ami-category"
+                    value={eligibilityRule.numberOfBedrooms}
+                    placeholder="-- Choose an option --"
+                    options={AMIUnitType}
+                    onchange={handleBedroomsChange}
+                    disabled={disableRuleSelection}>
+                </lightning-combobox>
+                <div if:true={errors.numberOfBedrooms} class="slds-form-element__help slds-text-color_error">
+                    {errors.numberOfBedrooms}
+                </div>
+            </div>
+            </div>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2 slds-p-top_medium">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="units-available">
+                        <abbr class="slds-required" title="required">*</abbr> Number of Units Available
+                        <lightning-helptext content="Total number of units available for this eligibility rule"></lightning-helptext>
+                    </label>
+                    <div class="slds-form-element__control">
+                        <lightning-input 
+                        type="number" 
+                        id="units-available"
+                        value={eligibilityRule.numberOfUnits}
+                        onchange={handleUnitsChange}>
+                    </lightning-input>
+                    <div if:true={errors.numberOfUnits} class="slds-form-element__help slds-text-color_error">
+                        {errors.numberOfUnits}
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2 slds-p-top_medium">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="ami-net-rent">
+                        <abbr class="slds-required" title="required">*</abbr> AMI Net Rent
+                    </label>
+                    <div class="slds-form-element__control">
+                        <lightning-input 
+                            type="number" 
+                            id="ami-net-rent" 
+                            formatter="currency"
+                            format-style="currency"
+                            currency-code="USD"
+                            step="0.01"
+                            value={eligibilityRule.amiNetRent}
+                            onchange={handleRentChange}>
+                        </lightning-input>
+                        <div if:true={errors.amiNetRent} class="slds-form-element__help slds-text-color_error">
+                            {errors.amiNetRent}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        
+        <template if:true={showSaveButton}>
+        <div class="slds-col slds-size_1-of-1 slds-p-top_medium">
+            <div class="slds-text-align_right">
+                <button class="slds-button slds-button_neutral" onclick={handleCancel}>Cancel</button>
+                <button class="slds-button slds-button_brand" onclick={handleSave}>Save</button>
+            </div>
+        </div>
+        </template>
+        <!-- Horizontal separator line -->
+        <div class="slds-col slds-size_1-of-1 slds-p-top_medium">
+            <div class="slds-border_bottom"></div>
+        </div>
+    </div>
+
+
+    <template if:true={rulesAvailable}>
+        <div class="eligibility-rules-container">
+            <!-- Table Container -->
+            <div class="table-container">
+                <table class="rule-table slds-table slds-table_bordered slds-table_cell-buffer" style="background-color: transparent;">
+                    <thead>
+                        <tr class="slds-text-title_caps">
+                            <th class="household-size-col">HOUSEHOLD SIZE</th>   
+                            <th class="min-income-col">MIN. HOUSEHOLD INCOME</th>
+                            <th class="max-income-col">MAX. HOUSEHOLD INCOME</th>
+                            <th class="actions-col">ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Existing rows -->
+                        <template for:each={rules} for:item="rule" for:index="index">
+                            <tr key={rule.ListingRuleId} class={rule.rowClass}>
+                                <td>
+                                    <template if:false={rule.isEditing}>
+                                        <div class="slds-align_absolute-center">{rule.Household_Size__c}</div>
+                                    </template>
+                                    <template if:true={rule.isEditing}>
+                                        <lightning-input 
+                                            type="number" 
+                                            value={rule.Household_Size__c}
+                                            min="1"
+                                            max="10"
+                                            data-id={rule.Id}
+                                            data-field="Household_Size__c"
+                                            variant="label-hidden"
+                                            class="edit-input"
+                                            onchange={handleFieldChange}>
+                                        </lightning-input>
+                                    </template>
+                                </td>
+                                <td>
+                                    <template if:false={rule.isEditing}>
+                                        <lightning-formatted-number 
+                                            class="slds-align_absolute-center" 
+                                            value={rule.HH_Min_Income__c} 
+                                            format-style="currency" 
+                                            currency-code="USD">
+                                        </lightning-formatted-number>
+                                    </template>
+                                    <template if:true={rule.isEditing}>
+                                        <lightning-input 
+                                            type="number" 
+                                            formatter="currency"
+                                            step="0.01"
+                                            min="0"
+                                            value={rule.HH_Min_Income__c}
+                                            data-id={rule.Id}
+                                            data-field="HH_Min_Income__c"
+                                            variant="label-hidden"
+                                            class="edit-input currency-input"
+                                            onchange={handleFieldChange}>
+                                        </lightning-input>
+                                    </template>
+                                </td>
+                                <td>
+                                    <template if:false={rule.isEditing}>
+                                        <lightning-formatted-number 
+                                            class="slds-align_absolute-center" 
+                                            value={rule.HH_Max_Income__c} 
+                                            format-style="currency" 
+                                            currency-code="USD">
+                                        </lightning-formatted-number>
+                                    </template>
+                                    <template if:true={rule.isEditing}>
+                                        <lightning-input 
+                                            type="number" 
+                                            formatter="currency"
+                                            step="0.01"
+                                            min="0"
+                                            value={rule.HH_Max_Income__c}
+                                            data-id={rule.Id}
+                                            data-field="HH_Max_Income__c"
+                                            variant="label-hidden"
+                                            class="edit-input currency-input"
+                                            onchange={handleFieldChange}>
+                                        </lightning-input>
+                                    </template>
+                                </td>
+                                <td>
+                                    <div class="action-buttons-container slds-align_absolute-center">
+                                        <template if:true={rule.isEditing}>
+                                            <lightning-button-icon 
+                                                icon-name="utility:check" 
+                                                alternative-text="Save" 
+                                                title="Save" 
+                                                variant="brand"
+                                                data-id={rule.Id}
+                                                class="action-button slds-m-right_xx-small" 
+                                                onclick={handleSaveClick}>
+                                            </lightning-button-icon>
+                                            <lightning-button-icon 
+                                                icon-name="utility:close" 
+                                                alternative-text="Cancel" 
+                                                title="Cancel" 
+                                                data-id={rule.Id}
+                                                class="action-button"
+                                                onclick={handleCancelClick}>
+                                            </lightning-button-icon>
+                                        </template>
+                                        <template if:false={rule.isEditing}>
+                                            <lightning-button-icon 
+                                                icon-name="utility:edit" 
+                                                alternative-text="Edit" 
+                                                title="Edit" 
+                                                data-id={rule.Id}
+                                                class="action-button slds-m-right_xx-small" 
+                                                onclick={handleEditClick}>
+                                            </lightning-button-icon>
+                                            <lightning-button-icon 
+                                                icon-name="utility:delete" 
+                                                alternative-text="Delete" 
+                                                title="Delete" 
+                                                data-id={rule.Id}
+                                                class="action-button"
+                                                onclick={handleDeleteClick}>
+                                            </lightning-button-icon>
+                                        </template>
+                                    </div>
+                                </td>
+                            </tr>
+                        </template>
+    
+                        <!-- Add new rule row -->
+                        <tr class="new-rule-row slds-hint-parent">
+                            <td>
+                                <lightning-input 
+                                    type="number" 
+                                    value={newRule.HouseholdSize}
+                                    min="1"
+                                    max="10"
+                                    required
+                                    variant="label-hidden"
+                                    placeholder="Enter Household size"
+                                    class="add-input"
+                                    onchange={handleNewHouseholdSizeChange}>
+                                </lightning-input>
+                            </td>
+                            <td>
+                                <lightning-input 
+                                    type="number" 
+                                    formatter="currency"
+                                    step="0.01"
+                                    min="0"
+                                    required
+                                    variant="label-hidden"
+                                    placeholder="Enter HH min Income"
+                                    value={newRule.MinHouseholdIncome}
+                                    class="add-input currency-input"
+                                    onchange={handleNewMinIncomeChange}>
+                                </lightning-input>
+                            </td>
+                            <td>
+                                <div class="input-with-error">
+                                    <lightning-input 
+                                        type="number" 
+                                        formatter="currency"
+                                        step="0.01"
+                                        min="0"
+                                        required
+                                        variant="label-hidden"
+                                        placeholder="Enter HH max Income"
+                                        value={newRule.MaxHouseholdIncome}
+                                        class="add-input currency-input"
+                                        onchange={handleNewMaxIncomeChange}>
+                                    </lightning-input>
+                                    <div if:true={showCompletionMessage} class="completion-message">
+                                        Complete this field.
+                                    </div>
+                                </div>
+                            </td>
+                            <td >
+                                <lightning-button 
+                                    label="Save" 
+                                    title="Save" 
+                                    variant="brand"
+                                    class="add-button" 
+                                    onclick={handleAddClick}>
+                                </lightning-button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </template>
+
+    <!-- Button container with left and right aligned buttons -->
+  <div class="slds-grid slds-gutters slds-m-top_medium slds-m-bottom_medium">
+    <template if:true={showDeleteRuleButton}>
+    <div class="slds-col slds-size_6-of-12">
+      <button class="slds-button slds-button_brand" onclick={handleDeleteRule}>Delete Listing Rule</button>
+    </div>
+</template>
+    <div class="slds-col slds-size_6-of-12 slds-text-align_right">
+      <button class="slds-button slds-button_brand" onclick={handleClose}>Close</button>
+    </div>
+  </div>
+
+  <template if:true={showSpinner}>
+    <lightning-spinner
+        alternative-text="Loading Accessibility Options..."
+        size="medium">
+    </lightning-spinner>
+</template>
+</template>

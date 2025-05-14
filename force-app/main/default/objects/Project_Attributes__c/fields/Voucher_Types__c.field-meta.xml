@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Voucher_Types__c</fullName>
+    <label>Voucher Types</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>PBCA</fullName>
+                <default>false</default>
+                <label>PBCA</label>
+            </value>
+            <value>
+                <fullName>PBRA</fullName>
+                <default>false</default>
+                <label>PBRA</label>
+            </value>
+            <value>
+                <fullName>Project Based Section 8 Rental Assistance</fullName>
+                <default>false</default>
+                <label>Project Based Section 8 Rental Assistance</label>
+            </value>
+            <value>
+                <fullName>Project Based Vouchers</fullName>
+                <default>false</default>
+                <label>Project Based Vouchers</label>
+            </value>
+            <value>
+                <fullName>RAD</fullName>
+                <default>false</default>
+                <label>RAD</label>
+            </value>
+            <value>
+                <fullName>Section 8</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Section 8</label>
+            </value>
+            <value>
+                <fullName>Tenant Based Section 8</fullName>
+                <default>false</default>
+                <label>Tenant Based Section 8</label>
+            </value>
+            <value>
+                <fullName>USDA RRAP</fullName>
+                <default>false</default>
+                <label>USDA RRAP</label>
+            </value>
+            <value>
+                <fullName>USDA Rural Rental Assistance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>USDA Rural Rental Assistance</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

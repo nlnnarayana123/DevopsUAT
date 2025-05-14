@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pending_Applications</fullName>
+    <columns>Name</columns>
+    <columns>Primary_Applicant__c</columns>
+    <columns>AppliedDate</columns>
+    <columns>First_Preferred_Unit_Type__c</columns>
+    <columns>Second_Preferred_Unit_Type__c</columns>
+    <columns>UnitType_1__c</columns>
+    <columns>UnitType_2__c</columns>
+    <columns>Waitlist__c</columns>
+    <columns>Project__c</columns>
+    <columns>Waitlist_Applicant_Number__c</columns>
+    <columns>Portal_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Pending Applications</label>
+</ListView>

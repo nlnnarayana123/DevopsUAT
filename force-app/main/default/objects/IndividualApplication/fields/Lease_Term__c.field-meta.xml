@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lease_Term__c</fullName>
+    <label>Lease Term</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>3 months</fullName>
+                <default>false</default>
+                <label>3 months</label>
+            </value>
+            <value>
+                <fullName>6 months</fullName>
+                <default>false</default>
+                <label>6 months</label>
+            </value>
+            <value>
+                <fullName>12 months</fullName>
+                <default>false</default>
+                <label>12 months</label>
+            </value>
+            <value>
+                <fullName>24 months</fullName>
+                <default>false</default>
+                <label>24 months</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

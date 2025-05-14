@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Available__c</fullName>
+    <description>Availability date for the listing</description>
+    <encryptionScheme>None</encryptionScheme>
+    <inlineHelpText>Availability date for the listing</inlineHelpText>
+    <label>Date Available</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

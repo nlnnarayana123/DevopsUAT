@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Status__c</fullName>
+    <description>Application Sub-Status will be dependent upon the Application Status</description>
+    <inlineHelpText>Application Sub-Status will be dependent upon the Application Status</inlineHelpText>
+    <label>Sub-Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Applicant Declined Unit</fullName>
+                <default>false</default>
+                <label>Applicant Declined Unit</label>
+            </value>
+            <value>
+                <fullName>Applicant Placed</fullName>
+                <default>false</default>
+                <label>Applicant Placed</label>
+            </value>
+            <value>
+                <fullName>Applicant Withdrawal</fullName>
+                <default>false</default>
+                <label>Applicant Withdrawal</label>
+            </value>
+            <value>
+                <fullName>O/MA Rejection</fullName>
+                <default>false</default>
+                <label>O/MA Rejection</label>
+            </value>
+            <value>
+                <fullName>Over Income</fullName>
+                <default>false</default>
+                <label>Over Income</label>
+            </value>
+            <value>
+                <fullName>Under Income</fullName>
+                <default>false</default>
+                <label>Under Income</label>
+            </value>
+            <value>
+                <fullName>Documents Requested</fullName>
+                <default>false</default>
+                <label>Documents Requested</label>
+            </value>
+            <value>
+                <fullName>Additional Documents Requested</fullName>
+                <default>false</default>
+                <label>Additional Documents Requested</label>
+            </value>
+            <value>
+                <fullName>No units available for household size</fullName>
+                <default>false</default>
+                <label>No units available for household size</label>
+            </value>
+            <value>
+                <fullName>Duplicate application</fullName>
+                <default>false</default>
+                <label>Duplicate application</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>Rejected</label>
+            </value>
+            <value>
+                <fullName>Prioritization Request Approved</fullName>
+                <default>false</default>
+                <label>Prioritization Request Approved</label>
+            </value>
+            <value>
+                <fullName>Prioritization Request Rejected</fullName>
+                <default>false</default>
+                <label>Prioritization Request Rejected</label>
+            </value>
+            <value>
+                <fullName>Ready to be offered unit</fullName>
+                <default>false</default>
+                <label>Ready to be offered unit</label>
+            </value>
+            <value>
+                <fullName>Unit Accepted by Applicant</fullName>
+                <default>false</default>
+                <label>Unit Accepted by Applicant</label>
+            </value>
+            <value>
+                <fullName>Unit Rejected by Applicant</fullName>
+                <default>false</default>
+                <label>Unit Rejected by Applicant</label>
+            </value>
+            <value>
+                <fullName>Appeal Filed</fullName>
+                <default>false</default>
+                <label>Appeal Filed</label>
+            </value>
+            <value>
+                <fullName>First Unit Rejected by Applicant</fullName>
+                <default>false</default>
+                <label>First Unit Rejected by Applicant</label>
+            </value>
+            <value>
+                <fullName>Second Unit Rejected by Applicant</fullName>
+                <default>false</default>
+                <label>Second Unit Rejected by Applicant</label>
+            </value>
+            <value>
+                <fullName>Moved In</fullName>
+                <default>false</default>
+                <label>Moved In</label>
+            </value>
+            <value>
+                <fullName>Move Request Accepted</fullName>
+                <default>false</default>
+                <label>Move Request Accepted</label>
+            </value>
+            <value>
+                <fullName>Move Request Rejected</fullName>
+                <default>false</default>
+                <label>Move Request Rejected</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Unit Offered</controllingFieldValue>
+            <valueName>Unit Accepted by Applicant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unit Offered</controllingFieldValue>
+            <valueName>First Unit Rejected by Applicant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unit Offered</controllingFieldValue>
+            <valueName>Second Unit Rejected by Applicant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Process</controllingFieldValue>
+            <valueName>Documents Requested</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Process</controllingFieldValue>
+            <controllingFieldValue>Documents Submitted</controllingFieldValue>
+            <valueName>Additional Documents Requested</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ineligible</controllingFieldValue>
+            <valueName>Over Income</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ineligible</controllingFieldValue>
+            <valueName>Under Income</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ineligible</controllingFieldValue>
+            <valueName>No units available for household size</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ineligible</controllingFieldValue>
+            <valueName>Duplicate application</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Applicant Declined Unit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Applicant Placed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Applicant Withdrawal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>O/MA Rejection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Documents Submitted</controllingFieldValue>
+            <valueName>Rejected</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Documents Submitted</controllingFieldValue>
+            <valueName>Ready to be offered unit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Move Request Submitted</controllingFieldValue>
+            <valueName>Moved In</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Move Request Submitted</controllingFieldValue>
+            <valueName>Move Request Accepted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Move Request Submitted</controllingFieldValue>
+            <valueName>Move Request Rejected</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

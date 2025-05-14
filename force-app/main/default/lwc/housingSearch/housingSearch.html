@@ -1,0 +1,371 @@
+<template>
+    <div class="housing-search-container">
+        <!-- Main search section -->
+        <!-- <h1 class="slds-p-top_medium slds-p-bottom_medium search-title">Housing Search</h1> -->
+        
+        <div class="search-box slds-card">
+            <div class="slds-grid slds-gutters slds-wrap">
+                <!-- Location Filter -->
+                <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12 slds-p-top_medium">
+                    <div class="filter-container">
+                        <div class="filter-header">
+                            <img src={locationIcon} alt="Location Icon" class="location-icon"/>
+                            <span class="filter-label  slds-p-left_small">Location</span>
+                        </div>
+                        <div class="location-options">
+                            <div class="slds-grid slds-gutters slds-wrap">
+                                <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12 ">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <div class="slds-radio_button-group">
+                                        <lightning-radio-group name="locationOptions" 
+                                                          options={locationTypeOptions}
+                                                          value={selectedLocationType}
+                                                          type="radio"
+                                                          variant="label-hidden"
+                                                          onchange={handleLocationTypeChange}>
+                                        </lightning-radio-group>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12">
+                                <template if:true={showCitiesDd}>
+                                
+                                    <lightning-combobox
+                                        class = "my-cystom-input"
+                                        placeholder="Select City"
+                                        options={cityOptions}
+                                        value={selectedCity}
+                                        onchange={handleCityChange}>
+                                    </lightning-combobox>
+                               
+                                    <!-- <select name="citys" id="cities" onchange={handleCityChange} style="border-radius: 20px; margin-top: 20px; height: 32px; border-color: #765E9F; width: -webkit-fill-available;" class="bedroom-select">
+                                        <option value="" disabled selected>Select City</option>
+                                        <template for:each={cityOptions} for:item="option">
+                                            <option key={option.value} value={option.value}>{option.label}</option>
+                                        </template>
+                                    </select> -->
+                                </template>
+                                <template if:true={showCountyDd}>
+                                
+                                    <lightning-combobox        
+                                    class = "my-cystom-input"                            
+                                        placeholder="Select County"
+                                        options={countyOptions}
+                                        value={selectedCounty}
+                                        onchange={handleCountyChange}
+                                        >
+                                    </lightning-combobox>
+                               
+                                    <!-- <select name="counties" id="counties" onchange={handleCountyChange} style="border-radius: 20px; margin-top: 20px; height: 32px; border-color: #765E9F; width: -webkit-fill-available;" class="bedroom-select">
+                                        <option value="" disabled selected>Select County</option>
+                                        <template for:each={countyOptions} for:item="option">
+                                            <option key={option.value} value={option.value}>{option.label}</option>
+                                        </template>
+                                    </select> -->
+
+                                </template>    
+                                <template if:true={showZipdd}>
+                                    
+                                    <lightning-combobox
+                                        class = "my-cystom-input"
+                                        placeholder="Select ZIP"
+                                        options={zipOptions}
+                                        value={selectedZip}
+                                        onchange={handleZipChange}
+                                        style="width: -webkit-fill-available;">
+                                    </lightning-combobox>
+                               
+                                <!-- <select name="zipcodes" id="zipcodes" onchange={handleZipChange} style="border-radius: 20px; margin-top: 20px; height: 32px; border-color: #765E9F; width: -webkit-fill-available;" class="bedroom-select">
+                                    <option value="" disabled selected>Select Zip</option>
+                                    <template for:each={zipOptions} for:item="option">
+                                        <option key={option.value} value={option.value}>{option.label}</option>
+                                    </template>
+                                </select> -->
+                                </template>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_5-of-12 slds-p-top_medium">
+                    <div class="filter-container">
+                        <div class="filter-header">
+                            <img src={moneyIcon} alt="Money Icon" class="money-icon"/>
+                            <span class="filter-label slds-p-left_small">&nbsp;Rent Range</span>
+                        </div>
+                        
+                        <div class="slds-grid slds-wrap slds-grid_align-left slds-gutters_xx-small">
+                            <!-- Min Rent Input -->
+                            <div class="slds-col slds-size_6-of-12">
+                                <lightning-input 
+                                    type="number"
+                                    placeholder="Min Rent ($)"
+                                    value={selectedMinRent}
+                                     class="my-cystom-input"
+                                    min="0"
+                                    onchange={handleMinRentChange}
+                                    style="width: -webkit-fill-available; height: 32px;">
+                                </lightning-input>
+                            </div>
+                            <!-- Max Rent Input -->
+                            <div class="slds-col slds-size_6-of-12">
+                                <lightning-input 
+                                    type="number"
+                                    placeholder="Max Rent ($)"
+                                    value={selectedMaxRent}
+                                    min="0"
+                                     class="my-cystom-input"
+                                    onchange={handleMaxRentChange}
+                                    style="width: -webkit-fill-available; height: 32px;">
+                                </lightning-input>
+                            </div>
+                        </div>
+                
+                        <!-- Validation Message -->
+                        <template if:true={showValidationError}>
+                            <div class="slds-text-color_error slds-p-top_small">Max Rent should be greater than Min Rent</div>
+                        </template>
+                    </div>
+                </div>
+                       
+                <!-- Bedrooms Filter -->
+                <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12 slds-p-top_medium">
+                    <div class="filter-container">
+                        <div class="filter-header">
+                            <img src={bedroomsIcon} alt="Location Icon" class="bedroom-icon"/>
+                            <span class="filter-label slds-p-left_small"># Bedrooms</span>
+                        </div>
+                            <lightning-combobox 
+                            class = "my-cystom-input"
+                                placeholder="Select No of Bedrooms"
+                                options={bedroomOptions}
+                                value={selectedBedrooms}
+                                onchange={handleBedroomsChange}>
+                            </lightning-combobox>
+                    </div>
+                </div>
+                
+                <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12 slds-p-top_medium">
+                    <div class="filter-container">
+                        <div class="filter-header">
+                            <img src={development} alt="Location Icon" class="development-icon"/>
+                            <span class="filter-label slds-p-left_small">Development</span>
+                        </div>
+                    <lightning-input 
+                        type="text"
+                        placeholder="Enter Development Name"
+                        value={selectedProject}
+                            class="my-cystom-input"
+                        min="0"
+                        onchange={handleProjectChange}
+                        style="width: -webkit-fill-available; height: 32px;">
+                    </lightning-input>
+                    </div>
+                </div>
+
+                <!-- <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12 slds-ptop_small">
+                    <div class="filter-container">
+                        <div class="filter-header">
+                            <img src={handicapLogo} alt="Location Icon" class="handicap-icon"/>
+                            <span class="filter-label slds-p-left_small">Show Accessible Units</span>
+                        </div>
+                        <lightning-combobox
+                        class = "my-cystom-input"
+                        placeholder="Select Accessible Units"
+                        options={AccessbileUnitOptions}
+                        value={selectedAccessibleUnit}
+                        onchange={handleAccessibleChange}>
+                    </lightning-combobox>
+                    </div>
+                </div> -->
+                <div class="slds-col slds-size_1-of-1 slds-large-size_5-of-12 slds-p-top_medium">
+                    <div class="filter-container">
+                        <div class="filter-header slds-grid slds-align-center">
+                            <img src={handicapLogo} alt="Accessible Icon" class="handicap-icon" />
+                            <span class="filter-label slds-p-left_small">
+                                Show - Only Accessible Units Listings <div class="custom-help-icon slds-p-left_xx-small" onmouseover={showTooltip} onmouseout={hideTooltip}>
+                                    <lightning-icon icon-name="utility:info" size="xx-small" alternative-text="Help"></lightning-icon>
+                                    <div class="tooltip" if:true={tooltipVisible}>{accesibleUnitsHelpText}</div>
+                                </div>
+                            </span>
+                
+                            <!-- Custom Help Icon -->
+                            
+                        </div>
+                
+                        <div class="toggle-wrapper slds-p-top_medium">
+                            <lightning-input
+                                type="toggle"
+                                name="showAccessible"
+                                checked={showAccessibleOnly}
+                                onchange={handleAccessibleChange}
+                                message-toggle-active="Yes"
+                                message-toggle-inactive="No">
+                            </lightning-input>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                  
+                  
+                <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12 slds-p-top_medium">
+                    <div class="filter-container">
+                        <div class="filter-header">
+                            <img src={handicapLogo} alt="Location Icon" class="handicap-icon"/>
+                            <span class="filter-label slds-p-left_small">Accessibility</span>
+                        </div>
+                        <lightning-combobox
+                        class = "my-cystom-input"
+                        placeholder="Select Accessibility"
+                        options={accessiblities}
+                        value={selectedAccessibility}
+                        onchange={handleAccessiblityChange}>
+                    </lightning-combobox>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Search Link -->
+            <!-- <div class="slds-grid slds-m-top_medium">
+                <div class="slds-col">
+                    <button onclick={toggleAdvancedSearch} class="advanced-search-button">
+                        Show Advanced Filters
+                    </button>
+                </div>
+            </div> -->
+
+            <div class="slds-grid slds-m-top_medium">
+                <div class="slds-col">
+                    <button onclick={toggleAdvancedSearch} class="advanced-search-button">
+                        {advancedSearchLabel}
+                    </button>
+                </div>
+            </div>
+
+
+            
+        <!-- Advanced search section (hidden by default) -->
+        <div class={advancedSearchClass}>
+            
+       
+            <!-- Income Section -->
+            <div class="income-section">
+                    <img src={moneyIcon} alt="Location Icon" class="money-icon"/>
+                    <span class="filter-label  slds-p-left_small">Income</span>
+                <div class="income-input slds-p-bottom_medium">
+                    <lightning-input class = "my-cystom-input" type="number" placeholder="Enter Household Income ($)" value={income} onchange={handleIncomeChange} style="width: -webkit-fill-available;"></lightning-input>
+                </div>
+            </div>
+
+            <!-- Amenities Section -->
+            <div class="amenities-section">
+                <div class="filter-label">Amenities</div>
+                <div class="tag-options">
+                    <template for:each={amenitiesTags} for:item="tag">
+                        <div key={tag.value} class="tag" data-id={tag.value} onclick={handleTagClick}>
+                            {tag.label}
+                            <span class="tag-icon">+</span>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <!-- Preferences Section -->
+            <div class="preferences-section">
+                <div class="filter-label">Preferences</div>
+                <div class="tag-options">
+                    <template for:each={preferencesTags} for:item="tag">
+                        <div key={tag.value} class="tag" data-id={tag.value} onclick={handleTagClick}>
+                            {tag.label}
+                            <span class="tag-icon">+</span>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <!-- Vouchers Section -->
+            <div class="vouchers-section">
+                <div class="filter-label">Vouchers</div>
+                <div class="tag-options">
+                    <template for:each={vouchersTags} for:item="tag">
+                        <div key={tag.value} class="tag" data-id={tag.value} onclick={handleTagClick}>
+                            {tag.label}
+                            <span class="tag-icon">+</span>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <!-- Clear Filters Button -->
+            <div class="clear-filters">
+                <lightning-button variant="brand" class="custom-button" label="Clear Filters" title="Clear all filters" onclick={clearAllFilters}></lightning-button>
+            </div>
+        </div>   
+        </div>
+
+
+        <!-- Results filter tabs -->
+        <div class="results-tabs">
+            <div class={allTabClass} onclick={showAllResults}>All</div>
+            <!-- <div class={lotteryTabClass} onclick={showLotteryResults}>Lottery</div>
+            <div class={waitlistTabClass} onclick={showWaitlistResults}>Waitlist</div> -->
+        </div>
+
+        <!-- Property results - NO CONDITIONAL RENDERING for the sample cards -->
+        <div class="property-results">
+            <div class="results-grid">
+                <template for:each={listings} for:item="listing">
+                    <div class="property-card" key={listing.Id} onclick={handleListingClick} data-id={listing.Id}>
+                        <div class="property-card-content">
+                            <div class="property-image-container">
+                                <template if:true={listing.HasImage}>
+                                    <img src={listing.Image} alt="Propert Image" class="property-image"/>    
+                                </template>
+                                <template if:false={listing.HasImage}>
+                                    <img src={demoImage} alt="Propert Image" class="property-image"/>
+                                </template>
+                                
+                                <template if:true={listing.IsMitchellLama}>
+                                    <div class="mitchell-lama-badge">
+                                        Mitchell-Lama Property
+                                    </div>
+                                </template>            
+                            </div>
+                            <div class="property-details">
+                                <div class="property-header">
+                                    <div class="property-type">{listing.Type}</div>
+                                    <template if:true={listing.isAccessibleUnit}>
+                                        <div class="property-name">{accessibleUnits} - {listing.ProjectName}</div>    
+                                    </template>
+                                    <template if:false={listing.isAccessibleUnit}>
+                                    <div class="property-name">{listing.ProjectName}</div>
+                                </template>
+                                <!-- <div class="property-name">{listing.ProjectName}</div> -->
+                                </div>
+                                <div class="property-info">
+                                    <div class="info-row">
+                                        <div class="info-label">INCOME RANGE:</div>
+                                        <div class="info-value">{listing.MinimumIncome}&nbsp;-&nbsp;{listing.MaximumIncome}</div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="info-label">COUNTY:</div>
+                                        <div class="info-value">{listing.County}</div>
+                                    </div>
+                                    <template if:true={listing.showApplicationDueDate}>
+                                    <div class="info-row">
+                                        <div class="info-label">APPLICATION DUE DATE:</div>
+                                        <div class="info-value">{listing.ApplicationEndDate}</div>
+                                    </div>
+                                </template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application_Submitted_As__c</fullName>
+    <label>Application Submitted As</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Paper Based Application</fullName>
+                <default>false</default>
+                <label>Paper Based Application</label>
+            </value>
+            <value>
+                <fullName>Online Application</fullName>
+                <default>true</default>
+                <label>Online Application</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

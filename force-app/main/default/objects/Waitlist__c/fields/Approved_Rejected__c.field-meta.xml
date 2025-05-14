@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approved_Rejected__c</fullName>
+    <description>This field is used to stamp the status of approval process. Initially when the request is submitted from community/website this field will be marked as submitted, then the approval process marks it as approved/rejected as per user decision.</description>
+    <label>Approval Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Draft to Open</fullName>
+                <default>false</default>
+                <label>Draft to Open</label>
+            </value>
+            <value>
+                <fullName>Open to Close</fullName>
+                <default>false</default>
+                <label>Open to Close</label>
+            </value>
+            <value>
+                <fullName>Close to Open</fullName>
+                <default>false</default>
+                <label>Close to Open</label>
+            </value>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>Rejected</label>
+            </value>
+            <value>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+                <label>Submitted To HCR</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

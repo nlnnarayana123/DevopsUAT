@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reinstate_Requested</fullName>
+    <columns>NAME</columns>
+    <columns>Individual_Application__c</columns>
+    <columns>Waitlist__c</columns>
+    <columns>project__c</columns>
+    <columns>Reinstate_Reason__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Reinstate_Request__c</field>
+        <operation>equals</operation>
+        <value>Submitted</value>
+    </filters>
+    <filters>
+        <field>Application_on_Hold__c</field>
+        <operation>equals</operation>
+        <value>Yes</value>
+    </filters>
+    <label>Reinstate Requested</label>
+</ListView>

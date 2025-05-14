@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Num_1BR_Units__c</fullName>
+    <label>Total Num 1BR Units</label>
+    <summarizedField>Waitlist_Building__c.Total_1BR_Units__c</summarizedField>
+    <summaryForeignKey>Waitlist_Building__c.Waitlist__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

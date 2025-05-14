@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Housing Search Component</masterLabel>
+    <description>Search interface for housing properties with advanced filtering options</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="title" type="String" label="Component Title" default="Housing Search Results" />
+            <property name="showTitle" type="Boolean" label="Show Title" default="false" />
+            <property name="showMitchellLamaFilter" type="Boolean" label="Show Mitchell-Lama Filter" default="false" />
+            <property name="defaultLocation" type="String" label="Default Location" default="Rochester, NY" />
+            <property name="defaultPageSize" type="Integer" label="Results Per Page" default="6" min="3" max="12" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

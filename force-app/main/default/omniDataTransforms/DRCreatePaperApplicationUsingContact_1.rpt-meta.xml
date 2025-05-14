@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;userProfile&quot; : &quot;HCR Applicant Community Login&quot;,
+  &quot;timeStamp&quot; : &quot;2025-01-24T08:50:55.677Z&quot;,
+  &quot;userTimeZoneName&quot; : &quot;America/Edmonton&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userName&quot; : &quot;josh.davies@prutech.com.uat&quot;,
+  &quot;userId&quot; : &quot;005cn000003i4arAAA&quot;,
+  &quot;omniProcessId&quot; : &quot;0jNcn0000007NJFEA2&quot;,
+  &quot;localTimeZoneName&quot; : &quot;America/Boise&quot;,
+  &quot;ApplicationExists&quot; : null,
+  &quot;Entrance&quot; : {
+    &quot;eWaitlistId&quot; : &quot;a0Ycn000000mpGLEAY&quot;,
+    &quot;ConfirmationNumberFormula&quot; : &quot;CNF-null&quot;,
+    &quot;Birthdate&quot; : &quot;1995-04-09&quot;,
+    &quot;LastName&quot; : &quot;Havidavos&quot;,
+    &quot;SSN_TIN&quot; : &quot;123526172&quot;,
+    &quot;FirstName&quot; : &quot;Manny&quot;
+  },
+  &quot;userAccountId&quot; : &quot;001cn0000069eyrAAA&quot;,
+  &quot;userProfileName&quot; : &quot;HCR Applicant Community Login&quot;,
+  &quot;userContactId&quot; : &quot;003cn000007FCEXAA4&quot;,
+  &quot;WaitlistId&quot; : &quot;a0Ycn000000mpGLEAY&quot;,
+  &quot;Global&quot; : {
+    &quot;WaitlistId&quot; : &quot;a0Ycn000000mpGLEAY&quot;,
+    &quot;ApplicationId&quot; : &quot;&quot;,
+    &quot;Application&quot; : {
+      &quot;UploadedScannedVersion&quot; : false
+    },
+    &quot;ApplicationType&quot; : &quot;New&quot;
+  },
+  &quot;Acct&quot; : [ {
+    &quot;FirstName&quot; : &quot;Manny&quot;,
+    &quot;LastName&quot; : &quot;Havidavos&quot;,
+    &quot;Id&quot; : &quot;001cn0000069eyrAAA&quot;,
+    &quot;Social_Security_Number__pc&quot; : &quot;123526172&quot;,
+    &quot;PersonBirthdate&quot; : &quot;1995-04-09&quot;
+  } ],
+  &quot;WaitlistApplicantFound&quot; : false,
+  &quot;ApplicationType&quot; : &quot;New&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DRCreatePaperApplicationUsingContact</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &quot;SELECT/\/\/Count()/\/\/FROM/\/\/Contact/\/\/WHERE/\/\/AccountId/\/\/=/\/\/&apos;{0}&apos;&quot; var:DRId_Account COUNTQUERY</formulaConverted>
+        <formulaExpression>COUNTQUERY(&quot;SELECT Count() FROM Contact WHERE AccountId = &apos;{0}&apos;&quot;, %DRId_Account%)</formulaExpression>
+        <formulaResultPath>Householdsize</formulaResultPath>
+        <formulaSequence>10.0</formulaSequence>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom8246</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom2823</globalKey>
+        <inputFieldName>Householdsize</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Household_Size__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &apos;OmniStudio_DynamicSOQL&apos; &apos;runQuery&apos; var:WaitlistQuery &apos;Waitlist__c&apos; FUNCTION</formulaConverted>
+        <formulaExpression>FUNCTION(&apos;OmniStudio_DynamicSOQL&apos;,&apos;runQuery&apos;,%WaitlistQuery%,&apos;Waitlist__c&apos;)</formulaExpression>
+        <formulaResultPath>WaitlistQueryResult</formulaResultPath>
+        <formulaSequence>6.0</formulaSequence>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem2</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom620</globalKey>
+        <inputFieldName>HHSize</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>HHSize</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &quot;SELECT/\/\/Id,/\/\/Project__c/\/\/FROM/\/\/Waitlist__c/\/\/WHERE/\/\/Id/\/\/=/\/\/&apos;&quot; var:WaitlistId + &quot;&apos;/\/\/GROUP/\/\/BY/\/\/Id,/\/\/Project__c&quot; + QUERY</formulaConverted>
+        <formulaExpression>QUERY(&quot;SELECT Id, Project__c FROM Waitlist__c WHERE Id = &apos;&quot; + %WaitlistId% + &quot;&apos; GROUP BY Id, Project__c&quot;)</formulaExpression>
+        <formulaResultPath>WaitlistQueryResult</formulaResultPath>
+        <formulaSequence>5.0</formulaSequence>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem4</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Entrance:SSN_TIN 5 9 SUBSTRING</formulaConverted>
+        <formulaExpression>SUBSTRING(%Entrance:SSN_TIN%, 5,9)</formulaExpression>
+        <formulaResultPath>Entrance:SSN_TIN_Last_Four__c</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem3</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem21</globalKey>
+        <inputFieldName>Global:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Household_Account__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem20</globalKey>
+        <inputFieldName>Entrance:UnitPreference-Block:Value</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>First_Preferred_Unit_Type__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom149</globalKey>
+        <inputFieldName>selectedUnitTypeIds</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>applicant_</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom1821</globalKey>
+        <inputFieldName>selectedUnitTypes</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Applied_Unit_Type__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>0ehcn0000002Dh7AAE</defaultValue>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem17</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>LicenseTypeId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem16</globalKey>
+        <inputFieldName>WaitlistId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Waitlist__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>var:Entrance:FirstName &quot;/\/\/&quot; + var:Entrance:LastName +</formulaConverted>
+        <formulaExpression>Entrance:FirstName + &quot; &quot; + Entrance:LastName</formulaExpression>
+        <formulaResultPath>ApplicantName</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem1</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem18</globalKey>
+        <inputFieldName>WaitlistQueryResult:Project__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Project_Lookup__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem19</globalKey>
+        <inputFieldName>Entrance:UnitPreference-Block:Value</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UnitType_1__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem9</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Entrance:FirstName ISNOTBLANK var:Entrance:FirstName &quot;&quot; IF | | var:Entrance:MiddleName ISNOTBLANK &quot;/\/\/&quot; var:Entrance:MiddleName + &quot;&quot; IF + | | var:Entrance:LastName ISNOTBLANK &quot;/\/\/&quot; var:Entrance:LastName + &quot;&quot; IF +</formulaConverted>
+        <formulaExpression>IF( ISNOTBLANK(Entrance:FirstName) , Entrance:FirstName, &quot;&quot;) + IF( ISNOTBLANK(Entrance:MiddleName) , &quot; &quot; + Entrance:MiddleName, &quot;&quot;) + IF( ISNOTBLANK(Entrance:LastName) , &quot; &quot; + Entrance:LastName, &quot;&quot;)</formulaExpression>
+        <formulaResultPath>Entrance:Name</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem0</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>HCR</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem11</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Category</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Submitted</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem10</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>HCR Applicant License</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem13</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>Name</lookupByFieldName>
+        <lookupObjectName>RegulatoryAuthorizationType</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>LicenseTypeId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem12</globalKey>
+        <inputFieldName>Today</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AppliedDate</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem15</globalKey>
+        <inputFieldName>userId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>OwnerId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem14</globalKey>
+        <inputFieldName>Global:ContactId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Primary_Applicant__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &quot;SELECT/\/\/Id/\/\/FROM/\/\/RegulatoryAuthorizationType/\/\/WHERE/\/\/Name/\/\/=/\/\/&apos;HCR/\/\/Applicant/\/\/License&apos;&quot; QUERY</formulaConverted>
+        <formulaExpression>QUERY(&quot;SELECT Id FROM RegulatoryAuthorizationType WHERE Name = &apos;HCR Applicant License&apos;&quot;)</formulaExpression>
+        <formulaResultPath>LicenseTypeId</formulaResultPath>
+        <formulaSequence>9.0</formulaSequence>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem6</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| NOW</formulaConverted>
+        <formulaExpression>NOW()</formulaExpression>
+        <formulaResultPath>Today</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem5</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Paper Based Application</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom5133</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Application_Submitted_As__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &apos;OmniStudio_DynamicSOQL&apos; &apos;runQuery&apos; var:LicenseTypeIdQuery &apos;RegulatoryAuthorizationType&apos; FUNCTION</formulaConverted>
+        <formulaExpression>FUNCTION(&apos;OmniStudio_DynamicSOQL&apos;,&apos;runQuery&apos;,%LicenseTypeIdQuery%,&apos;RegulatoryAuthorizationType&apos;)</formulaExpression>
+        <formulaResultPath>LicenseTypeId</formulaResultPath>
+        <formulaSequence>8.0</formulaSequence>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem7</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &quot;SELECT/\/\/Id/\/\/FROM/\/\/RegulatoryAuthorizationType/\/\/WHERE/\/\/Name/\/\/=/\/\/&apos;HCR/\/\/Applicant/\/\/License&apos;&quot; QUERY</formulaConverted>
+        <formulaExpression>QUERY(&quot;SELECT Id FROM RegulatoryAuthorizationType WHERE Name = &apos;HCR Applicant License&apos;&quot;)</formulaExpression>
+        <formulaResultPath>LicenseTypeIdQuery</formulaResultPath>
+        <formulaSequence>7.0</formulaSequence>
+        <globalKey>DRCreatePaperApplicationUsingContactCustom0jIcp0000004EcHEAUItem8</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreatePaperApplicationUsingContact</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;ContextId&quot; : &quot;a0O3S000001OTyCUAW&quot;,
+  &quot;timeStamp&quot; : &quot;2024-11-07T16:10:35.814Z&quot;,
+  &quot;userProfile&quot; : &quot;HCR Applicant Community Login&quot;,
+  &quot;userTimeZoneName&quot; : &quot;America/Denver&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userName&quot; : &quot;josh.davies@prutech.com.hcrdev&quot;,
+  &quot;userId&quot; : &quot;0053S000002R9otQAC&quot;,
+  &quot;omniProcessId&quot; : &quot;0jNcp0000004vJ3EAI&quot;,
+  &quot;localTimeZoneName&quot; : &quot;America/Boise&quot;,
+  &quot;Global&quot; : {
+    &quot;WaitlistId&quot; : &quot;&quot;,
+    &quot;ApplicationId&quot; : &quot;&quot;,
+    &quot;Application&quot; : {
+      &quot;UploadedScannedVersion&quot; : false
+    }
+  },
+  &quot;userContactId&quot; : &quot;003cp00000MJktkAAD&quot;,
+  &quot;userProfileName&quot; : &quot;HCR Applicant Community Login&quot;,
+  &quot;Contact&quot; : [ {
+    &quot;FirstName&quot; : &quot;Marvin&quot;,
+    &quot;MiddleName&quot; : &quot;James&quot;,
+    &quot;LastName&quot; : &quot;Foster&quot;,
+    &quot;Tax_Identification_Number__c&quot; : &quot;123526172&quot;
+  } ],
+  &quot;Entrance&quot; : {
+    &quot;FirstName&quot; : &quot;Marvin&quot;,
+    &quot;MiddleName&quot; : &quot;James&quot;,
+    &quot;LastName&quot; : &quot;Foster&quot;,
+    &quot;Suffix&quot; : null,
+    &quot;eConfirmationNumber&quot; : null,
+    &quot;SSN_TIN&quot; : &quot;123526172&quot;,
+    &quot;Birthdate&quot; : &quot;1995-04-10&quot;,
+    &quot;eWaitlistId&quot; : null,
+    &quot;ConfirmationNumberFormula&quot; : &quot;CNF-null&quot;
+  },
+  &quot;ApplicationType&quot; : &quot;New&quot;,
+  &quot;ApplicationTypeError&quot; : &quot;&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DRCreatePaperApplicationUsingContact_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ineligible_Applications</fullName>
+    <columns>Name</columns>
+    <columns>Account</columns>
+    <columns>AppliedDate</columns>
+    <columns>LicenseType</columns>
+    <columns>Status</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Status</field>
+        <operation>equals</operation>
+        <value>Ineligible,Rejected</value>
+    </filters>
+    <label>Ineligible/Rejected Applications</label>
+</ListView>

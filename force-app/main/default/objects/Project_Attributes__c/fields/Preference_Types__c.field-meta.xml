@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preference_Types__c</fullName>
+    <label>Preference Types</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Artist / Literary</fullName>
+                <default>false</default>
+                <label>Artist / Literary</label>
+            </value>
+            <value>
+                <fullName>Displ. by Subs Hsg Constr</fullName>
+                <default>false</default>
+                <label>Displ. by Subs Hsg Constr</label>
+            </value>
+            <value>
+                <fullName>Displaced by Disaster</fullName>
+                <default>false</default>
+                <label>Displaced by Disaster</label>
+            </value>
+            <value>
+                <fullName>ESSHI-Chronic homeless</fullName>
+                <default>false</default>
+                <label>ESSHI-Chronic homeless</label>
+            </value>
+            <value>
+                <fullName>ESSHI-Frail/disabled srs</fullName>
+                <default>false</default>
+                <label>ESSHI-Frail/disabled srs</label>
+            </value>
+            <value>
+                <fullName>ESSHI-Hmless/foster youth</fullName>
+                <default>false</default>
+                <label>ESSHI-Hmless/foster youth</label>
+            </value>
+            <value>
+                <fullName>ESSHI-I/DD</fullName>
+                <default>false</default>
+                <label>ESSHI-I/DD</label>
+            </value>
+            <value>
+                <fullName>ESSHI-Justice inv. yth.</fullName>
+                <default>false</default>
+                <label>ESSHI-Justice inv. yth.</label>
+            </value>
+            <value>
+                <fullName>ESSHI-Military w disabil.</fullName>
+                <default>false</default>
+                <label>ESSHI-Military w disabil.</label>
+            </value>
+            <value>
+                <fullName>ESSHI-Other</fullName>
+                <default>false</default>
+                <label>ESSHI-Other</label>
+            </value>
+            <value>
+                <fullName>ESSHI-Physically Disabled</fullName>
+                <default>false</default>
+                <label>ESSHI-Physically Disabled</label>
+            </value>
+            <value>
+                <fullName>ESSHI-Ppl w AIDS HIV HepC</fullName>
+                <default>false</default>
+                <label>ESSHI-Ppl w AIDS HIV HepC</label>
+            </value>
+            <value>
+                <fullName>ESSHI-SMI</fullName>
+                <default>false</default>
+                <label>ESSHI-SMI</label>
+            </value>
+            <value>
+                <fullName>ESSHI-Subst. Use Dis.</fullName>
+                <default>false</default>
+                <label>ESSHI-Subst. Use Dis.</label>
+            </value>
+            <value>
+                <fullName>ESSHI-Survivors DV or HT</fullName>
+                <default>false</default>
+                <label>ESSHI-Survivors DV or HT</label>
+            </value>
+            <value>
+                <fullName>Frail Elderly</fullName>
+                <default>false</default>
+                <label>Frail Elderly</label>
+            </value>
+            <value>
+                <fullName>Government Employee</fullName>
+                <default>false</default>
+                <label>Government Employee</label>
+            </value>
+            <value>
+                <fullName>Homeless/At-Risk</fullName>
+                <default>false</default>
+                <label>Homeless/At-Risk</label>
+            </value>
+            <value>
+                <fullName>HUD CoC Supp Hsg</fullName>
+                <default>false</default>
+                <label>HUD CoC Supp Hsg</label>
+            </value>
+            <value>
+                <fullName>Live, Work, Hired in Area</fullName>
+                <default>false</default>
+                <label>Live, Work, Hired in Area</label>
+            </value>
+            <value>
+                <fullName>NY 15/15</fullName>
+                <default>false</default>
+                <label>NY 15/15</label>
+            </value>
+            <value>
+                <fullName>NYC Community Board</fullName>
+                <default>false</default>
+                <label>NYC Community Board</label>
+            </value>
+            <value>
+                <fullName>OMH Supp Hsg for SMI</fullName>
+                <default>false</default>
+                <label>OMH Supp Hsg for SMI</label>
+            </value>
+            <value>
+                <fullName>OPWDD Integ Supp Hsg I/DD</fullName>
+                <default>false</default>
+                <label>OPWDD Integ Supp Hsg I/DD</label>
+            </value>
+            <value>
+                <fullName>Senior 55+</fullName>
+                <default>false</default>
+                <label>Senior 55+</label>
+            </value>
+            <value>
+                <fullName>Senior 62+</fullName>
+                <default>false</default>
+                <label>Senior 62+</label>
+            </value>
+            <value>
+                <fullName>Seniors (Other)</fullName>
+                <default>false</default>
+                <label>Seniors (Other)</label>
+            </value>
+            <value>
+                <fullName>Supp Hsg Other</fullName>
+                <default>false</default>
+                <label>Supp Hsg Other</label>
+            </value>
+            <value>
+                <fullName>Veterans</fullName>
+                <default>false</default>
+                <label>Veterans</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

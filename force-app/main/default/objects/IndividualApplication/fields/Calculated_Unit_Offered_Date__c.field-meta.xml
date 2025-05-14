@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Calculated_Unit_Offered_Date__c</fullName>
+    <formula>IF(
+AND(
+TODAY() - Unit_Offered_Date__c &lt;= 14,
+Unit_Offered_Date__c &lt;= TODAY()
+),
+TRUE,
+FALSE
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Calculated Unit Offered Date</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

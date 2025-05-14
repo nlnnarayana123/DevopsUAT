@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Check__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Does this listing require a credit check?</description>
+    <inlineHelpText>Does this listing require a credit check?</inlineHelpText>
+    <label>Credit Check</label>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

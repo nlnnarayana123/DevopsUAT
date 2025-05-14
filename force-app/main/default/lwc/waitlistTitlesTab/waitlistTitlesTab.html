@@ -1,0 +1,79 @@
+<template>
+    
+    
+    <lightning-card>
+        <!-- <div slot="actions"> -->
+            <!-- <div class="slds-grid slds-grid_vertical-align-center">
+                <label class="filter-label slds-m-right_x-small">Batch Size:</label>
+                <div class="small-combobox">
+                    <lightning-combobox
+                        name="filter"
+                        variant="label-hidden"
+                        placeholder="Filter"
+                        value={value}
+                        options={options}
+                        onchange={handleChange}>
+                    </lightning-combobox>
+                </div>
+            </div> -->
+            
+
+        <!-- </div> -->
+        <!-- <lightning-helptext content="Total number of units available for this eligibility rule"></lightning-helptext> -->
+        <template if:true={isLoaded}>
+                <c-unit-tiles waitlist-id={waitlistId} ondone={handleChildDone}></c-unit-tiles>
+                <div class="slds-grid slds-wrap slds-grid_align-spread checkbox-container slds-p-top_medium">
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-7 slds-p-around_xx-small">
+                        <lightning-input type="checkbox" 
+                                        label="Submitted" 
+                                        name="submitted" 
+                                        checked={submitted} 
+                                        onchange={handleCheckboxChange}>
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-7 slds-p-around_xx-small">
+                        <lightning-input type="checkbox" 
+                                        label="Select for Review" 
+                                        name="Selected For Review" 
+                                        checked={selectForReview} 
+                                        onchange={handleCheckboxChange}>
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-7 slds-p-around_xx-small">
+                        <lightning-input type="checkbox" 
+                                        label="Accepted Review" 
+                                        name="Accepted Review" 
+                                        checked={acceptedReview} 
+                                        onchange={handleCheckboxChange}>
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-7 slds-p-around_xx-small">
+                        <lightning-input type="checkbox" 
+                                        label="Unit Offered" 
+                                        name="Unit Offered" 
+                                        checked={unitOffered} 
+                                        onchange={handleCheckboxChange}>
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-7 slds-p-around_xx-small">
+                        <lightning-input type="checkbox" 
+                                        label="Closed" 
+                                        name="Closed" 
+                                        checked={closed} 
+                                        onchange={handleCheckboxChange}>
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-7 slds-p-around_xx-small">
+                        <lightning-input type="checkbox" 
+                                        label="Appeal Filed" 
+                                        name="Appeal Filed" 
+                                        checked={appealFiled} 
+                                        onchange={handleCheckboxChange}>
+                        </lightning-input>
+                    </div>
+                </div>
+                <c-housing-applicants waitlist-id={waitlistId} units-str={unitsStr} set-aside={setAside} preference={preference} selected-statuses={selectedStatuses} filter-status={filterStatus}></c-housing-applicants>
+        </template>
+        
+    </lightning-card>
+</template>

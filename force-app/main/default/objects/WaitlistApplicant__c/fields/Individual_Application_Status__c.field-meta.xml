@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Individual_Application_Status__c</fullName>
+    <label>Applicant Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+                <label>Submitted</label>
+            </value>
+            <value>
+                <fullName>In Process</fullName>
+                <default>false</default>
+                <label>In Process</label>
+            </value>
+            <value>
+                <fullName>Ineligible</fullName>
+                <default>false</default>
+                <label>Ineligible</label>
+            </value>
+            <value>
+                <fullName>Payment Requested</fullName>
+                <default>false</default>
+                <label>Payment Requested</label>
+            </value>
+            <value>
+                <fullName>Documents Submitted</fullName>
+                <default>false</default>
+                <label>Documents Submitted</label>
+            </value>
+            <value>
+                <fullName>Ready to be offered unit</fullName>
+                <default>false</default>
+                <label>Ready to be offered unit</label>
+            </value>
+            <value>
+                <fullName>Unit Offered</fullName>
+                <default>false</default>
+                <label>Unit Offered</label>
+            </value>
+            <value>
+                <fullName>Offer Accepted</fullName>
+                <default>false</default>
+                <label>Offer Accepted</label>
+            </value>
+            <value>
+                <fullName>Moved In</fullName>
+                <default>false</default>
+                <label>Moved In</label>
+            </value>
+            <value>
+                <fullName>Prioritization of applicant requested</fullName>
+                <default>false</default>
+                <label>Prioritization of applicant requested</label>
+            </value>
+            <value>
+                <fullName>Unit Accepted</fullName>
+                <default>false</default>
+                <label>Unit Accepted</label>
+            </value>
+            <value>
+                <fullName>Unit Rejected</fullName>
+                <default>false</default>
+                <label>Unit Rejected</label>
+            </value>
+            <value>
+                <fullName>Pending - Unit Rejected</fullName>
+                <default>false</default>
+                <label>Pending - Unit Rejected</label>
+            </value>
+            <value>
+                <fullName>Offer unit for viewing</fullName>
+                <default>false</default>
+                <label>Offer unit for viewing</label>
+            </value>
+            <value>
+                <fullName>Submitted to DHCR for Approval</fullName>
+                <default>false</default>
+                <label>Submitted to DHCR for Approval</label>
+            </value>
+            <value>
+                <fullName>Move Request Submitted</fullName>
+                <default>false</default>
+                <label>Move Request Submitted</label>
+            </value>
+            <value>
+                <fullName>Succession Submitted</fullName>
+                <default>false</default>
+                <label>Succession Submitted</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>Rejected</label>
+            </value>
+            <value>
+                <fullName>Appeal Filed</fullName>
+                <default>false</default>
+                <label>Appeal Filed</label>
+            </value>
+            <value>
+                <fullName>Payment Paid</fullName>
+                <default>false</default>
+                <label>Payment Paid</label>
+            </value>
+            <value>
+                <fullName>Succession Eligible</fullName>
+                <default>false</default>
+                <label>Succession Eligible</label>
+            </value>
+            <value>
+                <fullName>Inactive - Application Withdrawn</fullName>
+                <default>false</default>
+                <label>Inactive - Application Withdrawn</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

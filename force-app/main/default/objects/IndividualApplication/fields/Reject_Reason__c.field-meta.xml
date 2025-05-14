@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reject_Reason__c</fullName>
+    <label>Reject Reason</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Over Income</fullName>
+                <default>false</default>
+                <label>Over Income</label>
+            </value>
+            <value>
+                <fullName>Under Income</fullName>
+                <default>false</default>
+                <label>Under Income</label>
+            </value>
+            <value>
+                <fullName>No Units Available for Household Size</fullName>
+                <default>false</default>
+                <label>No Units Available for Household Size</label>
+            </value>
+            <value>
+                <fullName>Inconsistent/Unverifiable Household</fullName>
+                <default>false</default>
+                <label>Inconsistent/Unverifiable Household</label>
+            </value>
+            <value>
+                <fullName>Failed Criminal Legal System Individualized Assessment</fullName>
+                <default>false</default>
+                <label>Failed Criminal Legal System Individualized Assessment</label>
+            </value>
+            <value>
+                <fullName>Failed Credit Background Individualized Assessment</fullName>
+                <default>false</default>
+                <label>Failed Credit Background Individualized Assessment</label>
+            </value>
+            <value>
+                <fullName>Failure to Respond to Eligibility Appointment Letter</fullName>
+                <default>false</default>
+                <label>Failure to Respond to Eligibility Appointment Letter</label>
+            </value>
+            <value>
+                <fullName>Failure to Submit Documentation by Deadline Date</fullName>
+                <default>false</default>
+                <label>Failure to Submit Documentation by Deadline date</label>
+            </value>
+            <value>
+                <fullName>Self-Termination</fullName>
+                <default>false</default>
+                <label>Self-Termination</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

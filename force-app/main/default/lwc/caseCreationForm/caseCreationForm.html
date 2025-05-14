@@ -1,0 +1,238 @@
+<template>
+    <div class="slds-card slds-p-around_medium" style="margin: 0 auto; justify-content:center;  max-width: 1040px; margin-bottom: 3rem; padding: 15px; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);">
+        <!-- Support Information Section --><!-- 
+        <div class="support-info slds-p-bottom_medium">
+            <div class="slds-text-heading_medium slds-text-align_center slds-p-bottom_small">
+                <h2><strong>Support Information</strong></h2>
+            </div>
+            <div class="slds-text-body_regular slds-m-bottom_medium">
+                <p>For any issues or inquiries related to the New York State Housing Search (NYSHS) website, please contact our support team through one of the following options. Our team is available and ready to assist you.</p>
+            </div>
+            <div class="slds-grid slds-wrap slds-gutters slds-p-bottom_medium">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-bottom_small">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <lightning-icon icon-name="standard:note" size="small" alternative-text="Online Support" class="custom-icon"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            <p><strong>Online Support Ticket:</strong> Submit a request through the Inquiry form below.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-bottom_small">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <lightning-icon icon-name="standard:call" size="small" alternative-text="Phone Support" class="custom-icon"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            <p><strong>Toll-Free Phone Support:</strong> <a href="tel:8776524167">&nbsp;877-652-4167</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        
+        <!-- <div class="slds-border_top slds-m-top_medium slds-m-bottom_medium"></div> -->
+        
+        <!-- Form Header -->
+        <div class="slds-text-heading_medium slds-text-align_center slds-p-bottom_medium">
+            <h2><strong>Inquiry Form</strong></h2>
+        </div>
+        <div class="slds-text-heading_small slds-text-align_center slds-p-bottom_large">
+            <p>Please fill out this form to report any issues or receive assistance with using the system.</p>
+        </div>
+        
+        <div class="slds-grid slds-gutters slds-wrap">
+            <!-- First Name and Last Name -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-bottom_medium">
+                <label class="slds-form-element__label slds-m-bottom_none" for="units-available">
+                    <abbr class="slds-required" title="required">*</abbr> First Name
+                </label>
+                
+                <lightning-input 
+                    
+                    name="firstName" 
+                    value={firstName} 
+                    onchange={handleInputChange} 
+                    class="bold-label custom-input"
+                    variant="standard"
+                    
+                    >
+                </lightning-input>
+                <div if:true={errors.firstName} class="slds-form-element__help slds-text-color_error">
+                    {errors.firstName}
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-bottom_medium">
+                <label class="slds-form-element__label slds-m-bottom_none" for="units-available">
+                    <abbr class="slds-required" title="required">*</abbr> Last Name
+                </label>
+                <lightning-input 
+                    
+                    name="lastName" 
+                    value={lastName} 
+                    onchange={handleInputChange} 
+                    class="bold-label custom-input"
+                    variant="standard"
+                    >
+                </lightning-input>
+                <div if:true={errors.lastName} class="slds-form-element__help slds-text-color_error">
+                    {errors.lastName}
+                </div>
+            </div>
+            
+            <!-- Email and Phone -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-bottom_medium">
+                <label class="slds-form-element__label slds-m-bottom_none" for="units-available">
+                    <abbr class="slds-required" title="required">*</abbr> Email
+                </label>
+                <lightning-input 
+                    type="email" 
+                    
+                    name="email" 
+                    value={email} 
+                    onchange={handleInputChange}
+                    class="bold-label custom-input"
+                    variant="standard"
+                    >
+                </lightning-input>
+                <div if:true={errors.email} class="slds-form-element__help slds-text-color_error">
+                    {errors.email}
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-bottom_medium">
+                <label class="slds-form-element__label slds-m-bottom_none" for="units-available">
+                Phone
+                </label>
+                <lightning-input 
+                    type="tel" 
+                   
+                    name="phone" 
+                    value={phone} 
+                    onchange={handleInputChange}
+                    class="bold-label custom-input">
+                </lightning-input>
+            </div>
+            
+            <!-- Username -->   <!-- 
+            <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium">
+                <lightning-input 
+                    label="Username" 
+                    name="username" 
+                    value={username} 
+                    onchange={handleInputChange}
+                    class="bold-label custom-input"
+                    variant="standard">
+                </lightning-input>
+            </div> -->
+            
+            <!-- Type -->
+            <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium">
+                <label class="slds-form-element__label slds-m-bottom_none" for="units-available">
+                    <abbr class="slds-required" title="required">*</abbr> Type
+                </label>
+                <lightning-combobox
+                    name="selectedType"
+                    
+                    value={selectedType}
+                    options={typeOptions}
+                    onchange={handleInputChange}
+                    class="bold-label custom-input"
+                    >
+                </lightning-combobox>
+                <div if:true={errors.selectedType} class="slds-form-element__help slds-text-color_error">
+                    {errors.selectedType}
+                </div>
+            </div>
+            
+            <!-- Subject -->
+            <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium">
+                <label class="slds-form-element__label slds-m-bottom_none" for="units-available">
+                    <abbr class="slds-required" title="required">*</abbr> Subject
+                </label>
+                <lightning-input 
+                    
+                    name="subject" 
+                    value={subject} 
+                    onchange={handleInputChange}
+                    class="bold-label custom-input"
+                    >
+                </lightning-input>
+                <div if:true={errors.subject} class="slds-form-element__help slds-text-color_error">
+                    {errors.subject}
+                </div>
+            </div>
+            
+            <!-- Description -->
+            <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium">
+                <label class="slds-form-element__label slds-m-bottom_none" for="units-available">
+                    <abbr class="slds-required" title="required">*</abbr> Description
+                </label>
+                <lightning-textarea 
+                  
+                    name="description" 
+                    value={description} 
+                    onchange={handleInputChange}
+                    class="bold-label custom-input"
+                    >
+                </lightning-textarea>
+                <div if:true={errors.description} class="slds-form-element__help slds-text-color_error">
+                    {errors.description}
+                </div>
+            </div>
+            
+            <!-- File Upload -->
+            <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium">
+                <label class="slds-form-element__label slds-m-bottom_none" for="units-available">
+                     Attach Screenshot (Optional)
+                </label>
+                <template if:true={showFileUpload}>
+                    <lightning-input 
+                        type="file" 
+                        
+                        accept="image/*, .pdf, .doc, .docx, .xls, .xlsx, .txt"
+                        onchange={handleFileUpload}   
+                        class="bold-label custom-input">
+                    </lightning-input>
+                </template>
+                <template if:false={showFileUpload}>
+                    <div class="slds-grid slds-grid_vertical-align-center file-selected">
+                        <div class="slds-col">
+                            <p><strong>File Selected:</strong> {fileName}</p>
+                        </div>
+                        <div class="slds-col slds-text-align_right">
+                            <lightning-button 
+                                label="Remove" 
+                                variant="neutral" 
+                                onclick={handleRemoveFile}
+                                class="custom-button">
+                            </lightning-button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="slds-col slds-size_1-of-1 slds-p-top_medium slds-text-align_center">
+                <lightning-button 
+                    label="Submit" 
+                    variant="brand" 
+                    onclick={handleSubmit} 
+                    disabled={loading}
+                    class="custom-button submit-button">
+                </lightning-button>
+            </div>
+        </div>
+        
+        <!-- Loading Spinner -->
+        <template if:true={loading}>
+            <div class="slds-spinner_container slds-is-fixed">
+                <div class="slds-spinner slds-spinner_medium slds-spinner_brand" role="status">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </template>
+    </div><br/><br/>
+</template>

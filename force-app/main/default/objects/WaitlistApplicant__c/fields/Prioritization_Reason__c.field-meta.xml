@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prioritization_Reason__c</fullName>
+    <label>Prioritization Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Apartment Uninhabitable Circumstances</fullName>
+                <default>false</default>
+                <label>Apartment Uninhabitable Circumstances</label>
+            </value>
+            <value>
+                <fullName>Medical reasons</fullName>
+                <default>false</default>
+                <label>Medical reasons</label>
+            </value>
+            <value>
+                <fullName>Plumbing issues</fullName>
+                <default>false</default>
+                <label>Plumbing issues</label>
+            </value>
+            <value>
+                <fullName>Senior</fullName>
+                <default>false</default>
+                <label>Senior</label>
+            </value>
+            <value>
+                <fullName>Set Aside Accesibility</fullName>
+                <default>false</default>
+                <label>Set Aside Accesibility</label>
+            </value>
+            <value>
+                <fullName>Student</fullName>
+                <default>false</default>
+                <label>Student</label>
+            </value>
+            <value>
+                <fullName>Veteran</fullName>
+                <default>false</default>
+                <label>Veteran</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

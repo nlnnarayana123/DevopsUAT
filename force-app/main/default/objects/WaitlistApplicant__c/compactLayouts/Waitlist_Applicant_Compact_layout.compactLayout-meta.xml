@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Waitlist_Applicant_Compact_layout</fullName>
+    <fields>Primary_Applicant__c</fields>
+    <fields>Waitlist__c</fields>
+    <fields>Type__c</fields>
+    <fields>Status__c</fields>
+    <fields>Individual_Application_Status__c</fields>
+    <label>Waitlist Applicant Compact layout</label>
+</CompactLayout>

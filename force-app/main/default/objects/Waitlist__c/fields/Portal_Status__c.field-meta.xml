@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Portal_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  ISPICKVAL(Status__c, &quot;Submitted for Approval&quot;),
+  IF(
+    Type__c = &quot;HCR Lottery&quot;,
+    &quot;Lottery Submitted&quot;,
+    IF(
+      Type__c = &quot;HCR Waitlist&quot;,
+      &quot;Waitlist Submitted&quot;,
+      TEXT(Status__c)
+    )
+  ),
+  TEXT(Status__c)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Portal Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

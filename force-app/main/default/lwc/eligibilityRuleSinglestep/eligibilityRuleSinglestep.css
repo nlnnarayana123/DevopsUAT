@@ -1,0 +1,46 @@
+/* eligibilityRuleComponent.css */
+.slds-form-element {
+    margin-bottom: 0.5rem;
+}
+
+.slds-form-element__label {
+    font-weight: 500;
+}
+
+/* Add spacing between form sections */
+.slds-p-top_medium {
+    padding-top: 1rem;
+}
+
+/* Make required fields more noticeable */
+.slds-required {
+    color: rgb(194, 57, 52);
+    margin-right: 0.25rem;
+}
+
+
+.rule-table th,
+.rule-table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.currency-input lightning-input {
+    width: 100%;
+}
+
+.action-button {
+    cursor: pointer;
+}
+
+.add-button-container,
+.action-buttons-container {
+    display: flex;
+    justify-content: center;
+}
+
+.completion-message {
+    color: red;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}

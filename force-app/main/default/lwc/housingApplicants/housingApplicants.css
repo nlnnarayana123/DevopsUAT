@@ -1,0 +1,563 @@
+/* housingApplicants.css */
+/* Grey header styling */
+.slds-theme_shade, 
+.header-row, 
+thead tr {
+    background-color: #f3f2f2 !important; /* Light grey background color */
+    border-radius: 8px 8px 0 0 !important;
+}
+
+th {
+    font-weight: bold;
+    background-color: #f3f2f2 !important; /* Light grey background color */
+    color: #3e3e3c;
+}
+
+/* Curved table styles */
+.slds-table {
+    border-radius: 8px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Style for first header cell */
+.slds-table th:first-child {
+    border-top-left-radius: 8px !important;
+}
+
+/* Style for last header cell */
+.slds-table th:last-child {
+    border-top-right-radius: 8px !important;
+}
+
+/* Style for last row first cell */
+.slds-table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 8px !important;
+}
+
+/* Style for last row last cell */
+.slds-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 8px !important;
+}
+
+/* Add border styling */
+.slds-table th, .slds-table td {
+    border: 1px solid #e0e0e0 !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.slds-table tr:last-child td {
+    border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.custom1 {
+    font-weight: bold;
+}
+
+/* Improve zebra striping for better readability */
+.slds-table tbody tr:nth-child(odd) {
+    background-color: #ffffff !important;
+}
+
+.slds-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9 !important;
+}
+
+/* Hover effect for rows */
+.slds-table tbody tr:hover {
+    background-color: #f2f7fe !important;
+    transition: background-color 0.2s ease !important;
+}
+
+/* Table styling */
+.slds-checkbox_faux {
+    border-color: #dddbda;
+}
+
+.table-container {
+    overflow-x: auto;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    margin: 1rem 0 !important;
+}
+
+/* New styling for detail panel to match screenshot */
+.detail-wrapper {
+    /* padding: 1rem 2rem !important; */
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.custom-detail-container {
+    background-color: #fff;
+    border: 1px solid #dddbda;
+    border-radius: 8px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12) !important;
+    padding: 1.5rem !important;
+    margin: 0.5rem 0 1.5rem 0 !important;
+}
+
+.detail-label {
+    font-size: 0.75rem;
+    color: #706e6b;
+    font-weight: bolder;
+    letter-spacing: 0.0625rem;
+    margin-bottom: 0.25rem;
+}
+
+.detail-value {
+    color: #3e3e3c;
+    font-size: 0.875rem;
+}
+
+.view-details-btn {
+    background-color: #602C7E !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+    font-weight: normal !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.view-details-btn:hover {
+    background-color: #4e2366 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.slds-text-title {
+    font-size: 0.75rem;
+    color: #706e6b;
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+    margin-bottom: 0.25rem;
+}
+
+.slds-text-color_weak {
+    color: #3e3e3c;
+    font-size: 0.875rem;
+}
+
+.slds-button_brand {
+    background-color: #602C7E;
+    border-color: #602C7E;
+    border-radius: 4px !important;
+    transition: all 0.2s ease !important;
+}
+
+.slds-button_brand:hover {
+    background-color: #4e2366;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Eligibility and preferred unit size display */
+.eligibility-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.eligibility-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.25rem;
+}
+
+/* View Application Button styling */
+.view-application-btn {
+    background-color: white;
+    color: #0070d2; /* Salesforce blue */
+    border: 1px solid #d8dde6;
+    border-radius: 4px;
+    padding: 0.375rem 1rem;
+    font-size: 0.8125rem;
+    font-weight: normal;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: all 0.2s ease !important;
+}
+
+.view-application-btn:hover {
+    background-color: #f4f6f9;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Card styling */
+.slds-card {
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    margin: 1rem 0 !important;
+    overflow: hidden !important;
+}
+
+.slds-card__header {
+    background-color: #f3f2f2 !important;
+    padding: 1rem 1rem 0.75rem !important;
+    border-radius: 8px 8px 0 0 !important;
+}
+
+.slds-card__body {
+    padding: 0.5rem !important;
+    font-family: verdana;
+}
+
+/* Fix for expandable rows */
+tr.slds-hide {
+    display: none !important;
+}
+
+/* Animation for dropdown */
+.slds-button-icon {
+    transition: transform 0.2s ease !important;
+}
+
+.slds-button-icon[icon-name="utility:chevronup"] {
+    transform: rotate(180deg) !important;
+}
+
+/* Space between rows */
+.slds-table td {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+}
+
+.slds-table_bordered{
+    border-radius: 10px;
+    border-collapse: separate;
+    border-left: var(--lwc-borderWidthThin,1px) solid var(--slds-g-color-border-base-1, var(--lwc-colorBorder,rgb(128, 98, 167)));
+    border-top: var(--lwc-borderWidthThin,1px) solid var(--slds-g-color-border-base-1, var(--lwc-colorBorder,rgb(128, 98, 167)));
+    border-bottom: var(--lwc-borderWidthThin,1px) solid var(--slds-g-color-border-base-1, var(--lwc-colorBorder,rgb(128, 98, 167)));
+    border-right: var(--lwc-borderWidthThin,1px) solid var(--slds-g-color-border-base-1, var(--lwc-colorBorder,rgb(128, 98, 167)));
+}
+
+
+
+
+
+
+
+
+
+
+/* Add these pagination styles to your existing CSS file */
+
+/* Pagination controls styling */
+.pagination-controls {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    font-family: verdana;
+    font-weight: 400 !important;
+}
+
+.page-indicator {
+    font-size: 0.875rem;
+    color: #3e3e3c;
+    font-family: verdana;
+    font-weight: 400 !important;
+}
+
+/* Style for the pagination buttons */
+.pagination-controls .lightning-button {
+    --sds-c-button-brand-color-background: #602C7E !important;
+    --sds-c-button-brand-color-border: #602C7E !important;
+}
+
+/* Fix for buttons in pagination */
+.pagination-controls .slds-button {
+    font-family: verdana;
+    font-weight: 400 !important;
+}
+
+
+
+/* Loading spinner container */
+.slds-is-relative {
+    min-height: 5rem;
+}
+
+/* Empty state message */
+.slds-text-heading_small {
+    font-family: verdana;
+    font-weight: 400 !important;
+    color: #706e6b;
+}
+
+/* Fix for event handling on View Details button */
+.view-details-btn {
+    cursor: pointer !important;
+}
+
+/* CSS for detail panel that exactly matches the screenshot */
+.custom-detail-container {
+    background-color: #fff;
+    border: 1px solid #dddbda;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    font-family: verdana;
+    font-weight: 400;
+}
+
+/* Field group styling */
+.field-group {
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+/* Field label styling */
+.field-label {
+    color: #706e6b;
+    font-weight: 400;
+    font-size: 0.875rem;
+    margin-right: 0.5rem;
+    min-width: 8rem; /* Fixed width for labels to align values */
+}
+
+/* Field value styling */
+.field-value {
+    color: #3e3e3c;
+    font-size: 0.875rem;
+}
+
+/* Button container */
+/* .button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+} */
+
+/* View details button */
+.view-details-btn {
+    background-color: #602C7E;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: normal;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: verdana;
+}
+
+/* Button hover effect */
+.view-details-btn:hover {
+    background-color: #4e2366;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Table horizontal scrolling styles */
+.table-scroll-container {
+    overflow-x: auto;
+    max-width: 100%;
+    margin-bottom: 0.5rem;
+    padding-bottom: 8px; /* Space for scrollbar */
+    border-radius: 8px;
+}
+
+/* Set minimum width for table to ensure scrollbar appears when needed */
+.table-scroll-container .slds-table {
+    min-width: 1200px; /* Adjust this value based on your table's content */
+}
+
+/* Custom scrollbar styling for WebKit browsers (Chrome, Safari, Edge) */
+.table-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-scroll-container::-webkit-scrollbar-track {
+    background: #f3f2f2;
+    border-radius: 4px;
+}
+
+.table-scroll-container::-webkit-scrollbar-thumb {
+    background: #706e6b;
+    border-radius: 4px;
+}
+
+.table-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #602C7E; /* Uses your existing purple theme color */
+}
+
+/* Custom scrollbar for Firefox */
+.table-scroll-container {
+    scrollbar-width: thin;
+    scrollbar-color: #706e6b #f3f2f2;
+}
+
+/* Fix for expanded detail sections */
+.table-scroll-container tr[class=""] td {
+    min-width: 100%;
+}
+
+/* Ensure expanded details have full width */
+.table-scroll-container .detail-wrapper {
+    width: 100%;
+}
+
+/* Fix for shadow and border radius inside scroll container */
+.table-scroll-container .slds-table_bordered {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px !important;
+}
+
+/* Special handling for when table is smaller than container */
+@media screen and (min-width: 1200px) {
+    .table-scroll-container .slds-table_bordered {
+        width: 100%;
+    }
+}
+
+/* Fix border radius on detail rows */
+.table-scroll-container tr.slds-hide {
+    display: none !important;
+}
+
+/* Button group styling */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+/* Base button styles */
+.button-group button {
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: normal;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: verdana;
+}
+
+/* View details button style - keeping your existing style */
+.view-details-btn {
+    background-color: #602C7E;
+    color: white;
+    border: none;
+}
+
+.view-details-btn:hover {
+    background-color: #4e2366;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Select applicant button - green */
+.select-applicant-btn {
+    background-color: #2e844a;
+    color: white;
+    border: none;
+}
+
+.select-applicant-btn:hover {
+    background-color: #25743e;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Reject applicant button - red */
+.reject-applicant-btn {
+    background-color: #ea001e;
+    color: white;
+    border: none;
+}
+
+.reject-applicant-btn:hover {
+    background-color: #c4001a;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Waitlist applicant button - yellow/orange */
+.waitlist-applicant-btn {
+    background-color: #e99d18;
+    color: white;
+    border: none;
+}
+
+.waitlist-applicant-btn:hover {
+    background-color: #c78316;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* For smaller screens, allow buttons to stack */
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .button-group button {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+}
+
+
+/* Button container styling */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+/* Button group styling */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+/* View details button styling */
+.view-details-btn {
+    background-color: #602C7E;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: normal;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+    min-width: 10rem; /* Gives buttons more consistent width */
+    margin: 0.25rem; /* Adds spacing between buttons */
+}
+
+/* Button hover effect */
+.view-details-btn:hover {
+    background-color: #4e2366;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .view-details-btn {
+        width: 100%;
+        max-width: 20rem;
+        margin: 0.25rem 0;
+    }
+}

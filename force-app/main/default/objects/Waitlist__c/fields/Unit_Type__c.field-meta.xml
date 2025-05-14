@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unit_Type__c</fullName>
+    <description>HCR Lottery or Waitlist Type for consideration</description>
+    <label>Unit Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Studio</fullName>
+                <default>false</default>
+                <label>Studio</label>
+            </value>
+            <value>
+                <fullName>1BR</fullName>
+                <default>true</default>
+                <label>1BR</label>
+            </value>
+            <value>
+                <fullName>2BR</fullName>
+                <default>false</default>
+                <label>2BR</label>
+            </value>
+            <value>
+                <fullName>3BR</fullName>
+                <default>false</default>
+                <label>3BR</label>
+            </value>
+            <value>
+                <fullName>4BR</fullName>
+                <default>false</default>
+                <label>4BR</label>
+            </value>
+            <value>
+                <fullName>5BR</fullName>
+                <default>false</default>
+                <label>5BR</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
